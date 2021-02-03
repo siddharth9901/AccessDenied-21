@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1741C19C25C9C52800DFBDF9 /* FaqViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1741C19B25C9C52800DFBDF9 /* FaqViewController.swift */; };
+		1741C1A225C9CAA000DFBDF9 /* FaqCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1741C1A025C9CAA000DFBDF9 /* FaqCell.swift */; };
 		FDDBD77F25C7A25000111DFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBD77E25C7A25000111DFB /* AppDelegate.swift */; };
 		FDDBD78125C7A25000111DFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBD78025C7A25000111DFB /* SceneDelegate.swift */; };
 		FDDBD78325C7A25000111DFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBD78225C7A25000111DFB /* ViewController.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1741C19B25C9C52800DFBDF9 /* FaqViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqViewController.swift; sourceTree = "<group>"; };
+		1741C1A025C9CAA000DFBDF9 /* FaqCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqCell.swift; sourceTree = "<group>"; };
 		FDDBD77B25C7A25000111DFB /* accessDenied.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = accessDenied.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDDBD77E25C7A25000111DFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDDBD78025C7A25000111DFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,7 +106,9 @@
 			isa = PBXGroup;
 			children = (
 				FDDBD77E25C7A25000111DFB /* AppDelegate.swift */,
+				1741C1A025C9CAA000DFBDF9 /* FaqCell.swift */,
 				FDDBD7C025C7FD6B00111DFB /* Utility.swift */,
+				1741C19B25C9C52800DFBDF9 /* FaqViewController.swift */,
 				FDDBD78025C7A25000111DFB /* SceneDelegate.swift */,
 				FDDBD78225C7A25000111DFB /* ViewController.swift */,
 				FDDBD78425C7A25000111DFB /* Main.storyboard */,
@@ -264,6 +270,8 @@
 				FDDBD7C125C7FD6B00111DFB /* Utility.swift in Sources */,
 				FDDBD78325C7A25000111DFB /* ViewController.swift in Sources */,
 				FDDBD77F25C7A25000111DFB /* AppDelegate.swift in Sources */,
+				1741C19C25C9C52800DFBDF9 /* FaqViewController.swift in Sources */,
+				1741C1A225C9CAA000DFBDF9 /* FaqCell.swift in Sources */,
 				FDDBD78125C7A25000111DFB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,6 +451,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 526BVV54R4;
 				INFOPLIST_FILE = accessDenied/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -462,6 +471,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 526BVV54R4;
 				INFOPLIST_FILE = accessDenied/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
