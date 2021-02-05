@@ -29,7 +29,7 @@ class FaqCell: UITableViewCell {
     fileprivate let title: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-        label.text = "Course title here"
+        label.text = "Question"
         label.textColor = Colors.faqText
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -39,7 +39,7 @@ class FaqCell: UITableViewCell {
     fileprivate let url: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
-        label.text = "Course url here"
+        label.text = "Answer"
         label.textColor = .white
         //label.textAlignment = .center
         label.numberOfLines = -1

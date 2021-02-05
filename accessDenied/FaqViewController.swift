@@ -20,8 +20,8 @@ class FaqViewController: UIViewController {
     //Firebase:<_____
     var ref: DatabaseReference!
     var databaseHandle: DatabaseHandle?
-    
     var postData = [[String]]()
+    var data = [MCDropData(title: "Loading Question", url: "Loading Answer")]
     //_______>
     
     override func viewDidLoad() {
@@ -57,23 +57,23 @@ class FaqViewController: UIViewController {
         ref = Database.database().reference().child("FAQ")
                 ref?.observe(DataEventType.value, with: {
                     (snapshot) in
-                    
+                    self.data = []
                     if(snapshot.childrenCount>0){
                         print(snapshot);
 //                        self.timelineList.removeAll()
 //
 //
-//                        for cellContents in snapshot.children.allObjects as!  [DataSnapshot]
-//                        {
-//                            let cellObject = cellContents.value as? [String: AnyObject]
+                        for cellContents in snapshot.children.allObjects as!  [DataSnapshot]
+                        {
+                            let cellObject = cellContents.value as? [String: AnyObject]
 //                            let cellName = cellObject?["name"]
 //                            let cellTime = cellObject?["time"]
 //                            let cellImage = cellObject?["image"]
 //
-//                            let timeline = tableModel(name: cellName as! String?, time: cellTime as! String?, image: cellImage as! String?)
-//                            self.timelineList.append(timeline)
-//                        }
-//                        self.timelineTable.reloadData()
+                            let item = MCDropData(title: cellObject?["Question"] as! String? ?? "Failed to load Question", url: cellObject?["Answer"] as! String? ?? "Failed to load Answer")
+                            self.data.append(item)
+                        }
+                        self.tableView.reloadData()
 //
                         //Mark: - Offline functionalities
                         self.ref?.keepSynced(true)
@@ -96,8 +96,9 @@ class FaqViewController: UIViewController {
    
     
     
-    var data = [  MCDropData(title: "Pro Ani", url: "yo !"), MCDropData(title: "pro 2", url: "yo 2"), MCDropData(title: "pro 3", url: "yo 3")]
+//    var data = [  MCDropData(title: "Pro An", url: "yo !"), MCDropData(title: "pro 2", url: "yo 2"), MCDropData(title: "pro 3", url: "yo 3")]
 
+    
 }
 
 var selectedIndex: IndexPath = IndexPath(row: 0, section: 0)
