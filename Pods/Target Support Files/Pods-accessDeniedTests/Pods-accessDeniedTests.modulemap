@@ -1,0 +1,6 @@
+framework module Pods_accessDeniedTests {
+  umbrella header "Pods-accessDeniedTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
