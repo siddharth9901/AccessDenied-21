@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1741C19C25C9C52800DFBDF9 /* FaqViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1741C19B25C9C52800DFBDF9 /* FaqViewController.swift */; };
+		1741C1A225C9CAA000DFBDF9 /* FaqCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1741C1A025C9CAA000DFBDF9 /* FaqCell.swift */; };
+		177DFB4625CAB6D600B20A21 /* DevInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177DFB4525CAB6D600B20A21 /* DevInfoViewController.swift */; };
+		177DFB4C25CAB87C00B20A21 /* DevCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177DFB4A25CAB87C00B20A21 /* DevCell.swift */; };
+		177DFB4D25CAB87C00B20A21 /* DevCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 177DFB4B25CAB87C00B20A21 /* DevCell.xib */; };
 		FDDBD77F25C7A25000111DFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBD77E25C7A25000111DFB /* AppDelegate.swift */; };
 		FDDBD78125C7A25000111DFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBD78025C7A25000111DFB /* SceneDelegate.swift */; };
 		FDDBD78325C7A25000111DFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBD78225C7A25000111DFB /* ViewController.swift */; };
@@ -36,6 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1741C19B25C9C52800DFBDF9 /* FaqViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqViewController.swift; sourceTree = "<group>"; };
+		1741C1A025C9CAA000DFBDF9 /* FaqCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqCell.swift; sourceTree = "<group>"; };
+		177DFB4525CAB6D600B20A21 /* DevInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevInfoViewController.swift; sourceTree = "<group>"; };
+		177DFB4A25CAB87C00B20A21 /* DevCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevCell.swift; sourceTree = "<group>"; };
+		177DFB4B25CAB87C00B20A21 /* DevCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DevCell.xib; sourceTree = "<group>"; };
 		FDDBD77B25C7A25000111DFB /* accessDenied.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = accessDenied.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDDBD77E25C7A25000111DFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDDBD78025C7A25000111DFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,8 +112,13 @@
 			isa = PBXGroup;
 			children = (
 				FDDBD77E25C7A25000111DFB /* AppDelegate.swift */,
+				1741C1A025C9CAA000DFBDF9 /* FaqCell.swift */,
 				FDDBD7C025C7FD6B00111DFB /* Utility.swift */,
+				177DFB4A25CAB87C00B20A21 /* DevCell.swift */,
+				177DFB4B25CAB87C00B20A21 /* DevCell.xib */,
+				1741C19B25C9C52800DFBDF9 /* FaqViewController.swift */,
 				FDDBD78025C7A25000111DFB /* SceneDelegate.swift */,
+				177DFB4525CAB6D600B20A21 /* DevInfoViewController.swift */,
 				FDDBD78225C7A25000111DFB /* ViewController.swift */,
 				FDDBD78425C7A25000111DFB /* Main.storyboard */,
 				FDDBD78725C7A25400111DFB /* Assets.xcassets */,
@@ -237,6 +252,7 @@
 				FDDBD78B25C7A25400111DFB /* LaunchScreen.storyboard in Resources */,
 				FDDBD78825C7A25400111DFB /* Assets.xcassets in Resources */,
 				FDDBD78625C7A25000111DFB /* Main.storyboard in Resources */,
+				177DFB4D25CAB87C00B20A21 /* DevCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +277,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				177DFB4625CAB6D600B20A21 /* DevInfoViewController.swift in Sources */,
 				FDDBD7C125C7FD6B00111DFB /* Utility.swift in Sources */,
 				FDDBD78325C7A25000111DFB /* ViewController.swift in Sources */,
 				FDDBD77F25C7A25000111DFB /* AppDelegate.swift in Sources */,
+				1741C19C25C9C52800DFBDF9 /* FaqViewController.swift in Sources */,
+				1741C1A225C9CAA000DFBDF9 /* FaqCell.swift in Sources */,
 				FDDBD78125C7A25000111DFB /* SceneDelegate.swift in Sources */,
+				177DFB4C25CAB87C00B20A21 /* DevCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +463,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 526BVV54R4;
 				INFOPLIST_FILE = accessDenied/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -462,6 +483,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 526BVV54R4;
 				INFOPLIST_FILE = accessDenied/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

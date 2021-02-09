@@ -1,28 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qIF-uw-Dr5">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--FAQ-->
         <scene sceneID="Sqs-bR-d8a">
             <objects>
-                <viewController id="rqq-Xj-qqe" sceneMemberID="viewController">
+                <viewController id="rqq-Xj-qqe" customClass="FaqViewController" customModule="accessDenied" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Abs-mN-sjs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="65-1" translatesAutoresizingMaskIntoConstraints="NO" id="rik-6L-4Of">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FAQ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ka-Tq-dZC">
+                                <rect key="frame" x="24" y="25" width="93" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="4H4-ZS-KTp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7ka-Tq-dZC" firstAttribute="leading" secondItem="4H4-ZS-KTp" secondAttribute="leading" constant="24" id="JK2-8Y-gwg"/>
+                            <constraint firstItem="7ka-Tq-dZC" firstAttribute="top" secondItem="4H4-ZS-KTp" secondAttribute="top" constant="25" id="ufu-lF-go7"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Mcn-48-EBo"/>
+                    <tabBarItem key="tabBarItem" title="FAQ" selectedImage="Icon awesome-lightbulb" id="Mcn-48-EBo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FYL-yV-FP6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2752" y="86"/>
+            <point key="canvasLocation" x="-2752.1739130434785" y="85.59782608695653"/>
         </scene>
         <!--Item-->
         <scene sceneID="IDx-gw-kgF">
@@ -72,6 +89,53 @@
             </objects>
             <point key="canvasLocation" x="-158" y="86"/>
         </scene>
+        <!--Dev Info View Controller-->
+        <scene sceneID="ChG-DY-Ccw">
+            <objects>
+                <viewController id="qIF-uw-Dr5" customClass="DevInfoViewController" customModule="accessDenied" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jj5-q6-PED">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="65-1" translatesAutoresizingMaskIntoConstraints="NO" id="H5x-UB-QyO">
+                                <rect key="frame" x="-110" y="-32" width="1589" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" sectionIndexMinimumDisplayRowCount="1" allowsSelection="NO" rowHeight="196" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="beH-w4-Ecm">
+                                <rect key="frame" x="20" y="156" width="374" height="560"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRu-Ec-ay9">
+                                <rect key="frame" x="20" y="90" width="186" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Cs4-Qx-ckM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="beH-w4-Ecm" firstAttribute="top" secondItem="BRu-Ec-ay9" secondAttribute="bottom" constant="30" id="0hd-el-znD"/>
+                            <constraint firstItem="BRu-Ec-ay9" firstAttribute="top" secondItem="Cs4-Qx-ckM" secondAttribute="top" constant="90" id="9wR-wa-1Bp"/>
+                            <constraint firstItem="Cs4-Qx-ckM" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BRu-Ec-ay9" secondAttribute="trailing" symbolic="YES" id="Bx9-KP-fnu"/>
+                            <constraint firstItem="beH-w4-Ecm" firstAttribute="leading" secondItem="Cs4-Qx-ckM" secondAttribute="leading" constant="20" id="LOo-Fp-le3"/>
+                            <constraint firstItem="Cs4-Qx-ckM" firstAttribute="trailing" secondItem="beH-w4-Ecm" secondAttribute="trailing" constant="20" id="TPd-Ij-Qwp"/>
+                            <constraint firstItem="BRu-Ec-ay9" firstAttribute="leading" secondItem="Cs4-Qx-ckM" secondAttribute="leading" constant="20" id="XNY-ta-2C7"/>
+                            <constraint firstItem="Cs4-Qx-ckM" firstAttribute="bottom" secondItem="beH-w4-Ecm" secondAttribute="bottom" constant="20" id="fXP-1W-Iwa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="beH-w4-Ecm" id="LVR-yI-S52"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ya5-tE-b44" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-436.23188405797106" y="-1348.3695652173915"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="RTe-Jf-8Xp">
             <objects>
@@ -102,7 +166,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="65-1" translatesAutoresizingMaskIntoConstraints="NO" id="bln-Ut-Ucm">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Hackathon Logo" translatesAutoresizingMaskIntoConstraints="NO" id="aG8-9h-64Q">
@@ -233,12 +297,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3539" y="86"/>
+            <point key="canvasLocation" x="-3539.130434782609" y="85.59782608695653"/>
         </scene>
     </scenes>
     <resources>
         <image name="65-1" width="8000" height="5000"/>
         <image name="Hackathon Logo" width="118" height="148"/>
+        <image name="Icon awesome-lightbulb" width="16" height="23"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
