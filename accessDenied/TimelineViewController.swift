@@ -28,7 +28,7 @@ class TimelineViewController: UIViewController {
    
   
 
-    var events = [event(StartTime: "Loading Start Time",EndTime: "Loading End Time", description: "Loading Description", meetLink: "Loading Link", dp: "https://st.depositphotos.com/2101611/4338/v/600/depositphotos_43381243-stock-illustration-male-avatar-profile-picture.jpg")]
+    var events: [event] = []
     //_______>
     
     
