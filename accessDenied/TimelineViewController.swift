@@ -41,6 +41,7 @@ class TimelineViewController: UIViewController {
         let description: String // About the event
         let meetLink: String // Link of meeting
         let dp: String // Profile picture
+        let status: Int//Ongoing or not
     }
     
     //var events: [event] = [event(time: "10:30 PM", description: "Hack Begins - 36 hours to go.",  meetLink: "", dp: UIImage(named: "sidDP")!)]
@@ -85,7 +86,7 @@ class TimelineViewController: UIViewController {
 //                            let cellTime = cellObject?["time"]
 //                            let cellImage = cellObject?["image"]
 //
-                            let item = event(StartTime: cellObject?["StartTime"] as! String? ?? "Failed to load StartTime", EndTime: cellObject?["EndTime"] as! String? ?? "Failed to load EndTime",description: cellObject?["EventName"] as! String? ?? "Failed to load EventDescription", meetLink: cellObject?["Link"] as! String? ?? "", dp: cellObject?["SpeakerPhoto"] as! String? ?? "")
+                            let item = event(StartTime: cellObject?["StartTime"] as! String? ?? "Failed to load StartTime", EndTime: cellObject?["EndTime"] as! String? ?? "Failed to load EndTime",description: cellObject?["EventName"] as! String? ?? "Failed to load EventDescription", meetLink: cellObject?["Link"] as! String? ?? "", dp: cellObject?["SpeakerPhoto"] as! String? ?? "", status: cellObject?["Status"] as! Int? ?? 0 )
                             self.events.append(item)
                             self.tableView.reloadData()
                             print("\n",self.events)
@@ -111,21 +112,20 @@ class TimelineViewController: UIViewController {
         
         if sender.selectedSegmentIndex == 0{
             activityIndicatorView.startAnimating()
-             loadData(EventDate: "17")
+             loadData(EventDate: "19")
            
             
         }
          
         else if sender.selectedSegmentIndex == 1{
             activityIndicatorView.startAnimating()
-            loadData(EventDate: "18")
+            loadData(EventDate: "20")
            
         }
         
         else{
             activityIndicatorView.startAnimating()
-            loadData(EventDate: "19")
-            
+            loadData(EventDate: "21")
         }
         
     }
@@ -209,6 +209,13 @@ extension TimelineViewController: UITableViewDataSource,UITableViewDelegate{
             
             cell.copyBtnOutlet.isHidden = false
             cell.copyBtnOutlet.setImage(UIImage(systemName:  "doc.on.clipboard.fill"), for: .normal)
+        }
+        if events[indexPath.section].status == 1{//if event is Ongoing
+            cell.layer.borderWidth = 2
+            cell.layer.borderColor = Colors.faqText.cgColor
+            print("yo")
+        } else {
+            cell.layer.borderWidth = 0
         }
         print("????//////////////////////")
         print("",cell.playButtonOutlet.isHidden)
