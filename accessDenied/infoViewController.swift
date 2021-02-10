@@ -10,7 +10,7 @@ import UIKit
 struct infoTopics{
     var title: String
     var details: String
-    var image: UIImage
+    var image: UIImage?
 }
 
 class infoViewController: UIViewController {
@@ -20,7 +20,7 @@ class infoViewController: UIViewController {
     
     var infoCells: [infoTopics] = [infoTopics(title: "About Access Denied", details: "Access Denied is a 36-hour hackathon organized by                                         IETE-ISF for innovators across the country. It is an great opportunity to put your technical skills to use.                                 Apply your textbook knowledge to real life ideas and stand a chance to win exclusive goodies, schwags,                                      certificates and cash prizes upto Rs. 90,000. Mark your calendars for 19th to 21st March 2021.", image:                                    UIImage(named: "Hackathon Logo")!),
                                    infoTopics(title: "About IETE", details: "The Institution of Electronics and Telecommunication Engineers (IETE) is India’s leading recognized professional society devoted to the advancement of Science and Technology of Electronics, Telecommunication and IT. Government of India hasrecognized IETE as a Scientific and Industrial Research Organization (SIRO) and also notified as an educational Institution of national eminence. The objectives of IETE focus on advancing electro-technology. The IETE conducts and partners technical meetings, conferences, symposia, and exhibitions all over India, publishes technical journals and providescontinuing education as well as career advancement opportunities to its members.", image: UIImage(named: "IETE WHITE")!),
-                                   infoTopics(title: "Developer Info", details: " ", image: UIImage(named: "Hackathon Logo")!)]
+                                   infoTopics(title: "Developer Info", details: " ", image: UIImage(named: "Hackathon Logo")!), infoTopics(title: "Contact Us", details: " ")]
 
     
     //var sponsors
@@ -56,7 +56,7 @@ class infoViewController: UIViewController {
 
 extension infoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        return 50
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return infoCells.count
@@ -70,6 +70,9 @@ extension infoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if infoCells[indexPath.row].title == "Developer Info"{
             self.performSegue(withIdentifier: "devInfo", sender: self)
+        }
+        else if infoCells[indexPath.row].title == "Contact Us"{
+            self.performSegue(withIdentifier: "contactUs", sender: self)
         }
         else{
             self.infoText = infoCells[indexPath.row].details

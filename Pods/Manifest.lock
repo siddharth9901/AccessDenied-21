@@ -22,6 +22,7 @@ PODS:
     - PromisesObjC (~> 1.2)
   - GoogleUtilities/Logger (7.1.1):
     - GoogleUtilities/Environment
+  - IQKeyboardManagerSwift (6.5.6)
   - leveldb-library (1.22)
   - nanopb (2.30906.0):
     - nanopb/decode (= 2.30906.0)
@@ -36,6 +37,7 @@ PODS:
 
 DEPENDENCIES:
   - Firebase/Database
+  - IQKeyboardManagerSwift
   - SDWebImage
   - Toaster
 
@@ -47,6 +49,7 @@ SPEC REPOS:
     - FirebaseDatabase
     - GoogleDataTransport
     - GoogleUtilities
+    - IQKeyboardManagerSwift
     - leveldb-library
     - nanopb
     - PromisesObjC
@@ -60,12 +63,13 @@ SPEC CHECKSUMS:
   FirebaseDatabase: bf02ea57590aaab4e72b9b12b412a4c881ee81e2
   GoogleDataTransport: e4085e6762f36a6141738f46b0153473ce57fb18
   GoogleUtilities: 3dc4ff0d5e4840e2fa8eef0889620e8c33d4218c
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
   SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
   Toaster: c3473963c78e8cabbf6ea6f11ad0fdaae6f54987
 
-PODFILE CHECKSUM: 8079534fff712549e0a5166344d7b1c2afe00459
+PODFILE CHECKSUM: 3cb74c1e6143e548fb5132b39342bea9e77a6074
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.9.3

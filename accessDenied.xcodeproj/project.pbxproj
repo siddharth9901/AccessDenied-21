@@ -28,6 +28,7 @@
 		AF21BCF925D342AE009CF417 /* speakerMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21BCF825D342AE009CF417 /* speakerMainTableViewCell.swift */; };
 		AF21BCFE25D342C6009CF417 /* speakerInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21BCFD25D342C6009CF417 /* speakerInfoTableViewCell.swift */; };
 		AF21BD0325D34A87009CF417 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21BD0225D34A87009CF417 /* Model.swift */; };
+		BA9DE95F25D44F8700EF25F5 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9DE95E25D44F8700EF25F5 /* ContactUsViewController.swift */; };
 		FD2320BE25D3BEFA001414C2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD2320BD25D3BEFA001414C2 /* GoogleService-Info.plist */; };
 		FDDBD77F25C7A25000111DFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBD77E25C7A25000111DFB /* AppDelegate.swift */; };
 		FDDBD78125C7A25000111DFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBD78025C7A25000111DFB /* SceneDelegate.swift */; };
@@ -35,7 +36,6 @@
 		FDDBD78625C7A25000111DFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDDBD78425C7A25000111DFB /* Main.storyboard */; };
 		FDDBD78B25C7A25400111DFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDDBD78925C7A25400111DFB /* LaunchScreen.storyboard */; };
 		FDDBD79625C7A25500111DFB /* accessDeniedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBD79525C7A25500111DFB /* accessDeniedTests.swift */; };
-		FDDBD7A125C7A25500111DFB /* accessDeniedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBD7A025C7A25500111DFB /* accessDeniedUITests.swift */; };
 		FDDBD7C125C7FD6B00111DFB /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBD7C025C7FD6B00111DFB /* Utility.swift */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +81,7 @@
 		AF21BCFD25D342C6009CF417 /* speakerInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = speakerInfoTableViewCell.swift; sourceTree = "<group>"; };
 		AF21BD0225D34A87009CF417 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		AF21BD0725D34F7E009CF417 /* BebasNeue-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Regular.ttf"; sourceTree = "<group>"; };
+		BA9DE95E25D44F8700EF25F5 /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		CED1172FF754C4C70CC0E192 /* Pods_accessDeniedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_accessDeniedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E57FB910828E649B4E892AD9 /* Pods-accessDenied.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-accessDenied.release.xcconfig"; path = "Target Support Files/Pods-accessDenied/Pods-accessDenied.release.xcconfig"; sourceTree = "<group>"; };
 		F05B4E54822432FC3A7F6BCA /* Pods-accessDenied.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-accessDenied.debug.xcconfig"; path = "Target Support Files/Pods-accessDenied/Pods-accessDenied.debug.xcconfig"; sourceTree = "<group>"; };
@@ -97,8 +98,6 @@
 		FDDBD79525C7A25500111DFB /* accessDeniedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accessDeniedTests.swift; sourceTree = "<group>"; };
 		FDDBD79725C7A25500111DFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDDBD79C25C7A25500111DFB /* accessDeniedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = accessDeniedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FDDBD7A025C7A25500111DFB /* accessDeniedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accessDeniedUITests.swift; sourceTree = "<group>"; };
-		FDDBD7A225C7A25500111DFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDDBD7C025C7FD6B00111DFB /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,7 +157,6 @@
 			children = (
 				FDDBD77D25C7A25000111DFB /* accessDenied */,
 				FDDBD79425C7A25500111DFB /* accessDeniedTests */,
-				FDDBD79F25C7A25500111DFB /* accessDeniedUITests */,
 				FDDBD77C25C7A25000111DFB /* Products */,
 				9027EC42F07814CA090F6EF1 /* Pods */,
 				F06322A3499BC4817D33C8EA /* Frameworks */,
@@ -193,6 +191,7 @@
 				178D239925D3F7DA007459A7 /* TimelineCell.swift */,
 				178D239A25D3F7DA007459A7 /* TimelineCell.xib */,
 				AF21BCDF25D32B83009CF417 /* infoOptionsTableViewCell.swift */,
+				BA9DE95E25D44F8700EF25F5 /* ContactUsViewController.swift */,
 				AF21BCF325D34299009CF417 /* speakerViewController.swift */,
 				AF21BCF825D342AE009CF417 /* speakerMainTableViewCell.swift */,
 				AF21BCFD25D342C6009CF417 /* speakerInfoTableViewCell.swift */,
@@ -216,15 +215,6 @@
 				FDDBD79725C7A25500111DFB /* Info.plist */,
 			);
 			path = accessDeniedTests;
-			sourceTree = "<group>";
-		};
-		FDDBD79F25C7A25500111DFB /* accessDeniedUITests */ = {
-			isa = PBXGroup;
-			children = (
-				FDDBD7A025C7A25500111DFB /* accessDeniedUITests.swift */,
-				FDDBD7A225C7A25500111DFB /* Info.plist */,
-			);
-			path = accessDeniedUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -475,6 +465,7 @@
 				AF21BCF425D34299009CF417 /* speakerViewController.swift in Sources */,
 				AF21BCE525D32B90009CF417 /* infoViewController.swift in Sources */,
 				178D239B25D3F7DA007459A7 /* TimelineCell.swift in Sources */,
+				BA9DE95F25D44F8700EF25F5 /* ContactUsViewController.swift in Sources */,
 				AF21BCEA25D32F66009CF417 /* detailViewController.swift in Sources */,
 				AF21BD0325D34A87009CF417 /* Model.swift in Sources */,
 				FDDBD7C125C7FD6B00111DFB /* Utility.swift in Sources */,
@@ -502,7 +493,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDDBD7A125C7A25500111DFB /* accessDeniedUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,7 +654,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 526BVV54R4;
+				DEVELOPMENT_TEAM = SLQAQ6UNLD;
 				INFOPLIST_FILE = accessDenied/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -685,7 +675,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 526BVV54R4;
+				DEVELOPMENT_TEAM = SLQAQ6UNLD;
 				INFOPLIST_FILE = accessDenied/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
