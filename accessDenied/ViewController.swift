@@ -16,11 +16,27 @@ class ViewController: UIViewController {
     @IBOutlet weak var register: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        setColors()
         register.setGradientBackground(colorOne: Colors.buttonRight, colorTwo: Colors.buttonLeft)
         register.layer.cornerRadius = 20
         register.clipsToBounds = true
         runCountdown()
        
+    }
+    func setColors(){
+        days.backgroundColor = UIColor.dayLabelColour
+        hours.backgroundColor = UIColor.hoursLabelColour
+        seconds.backgroundColor = UIColor.secondsLabelColour
+        minutes.backgroundColor = UIColor.minutesLabelColour
+        
+        curveCorners(label: days)
+        curveCorners(label: hours)
+        curveCorners(label: seconds)
+        curveCorners(label: minutes)
+    }
+    func curveCorners(label: UILabel){
+        label.clipsToBounds = true
+        label.layer.cornerRadius = 18
     }
     @IBAction func register(_ sender: Any) {
     }
@@ -46,10 +62,10 @@ class ViewController: UIViewController {
             let hour = countdown.hour!
             let minute = countdown.minute!
             let second = countdown.second!
-            days.text = String(day)
-            hours.text = String(hour)
-            minutes.text = String(minute)
-            seconds.text = String(second)
+            days.text = String(format: "%02d", day)
+            hours.text = String(format: "%02d",hour)
+            minutes.text = String(format: "%02d",minute)
+            seconds.text = String(format: "%02d",second)
             
         }
 

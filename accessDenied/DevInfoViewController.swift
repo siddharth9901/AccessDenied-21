@@ -31,6 +31,11 @@ class DevInfoViewController: UIViewController {
         tableView.register(UINib(nibName: "DevCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
     }
     
+    @IBAction func back(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
  
 }
 
