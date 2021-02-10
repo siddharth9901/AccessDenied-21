@@ -7,7 +7,8 @@ target 'accessDenied' do
 
   # Pods for accessDenied
     pod 'Firebase/Database'
-
+    pod 'SDWebImage'
+    pod 'Toaster'
 
 
   target 'accessDeniedTests' do
