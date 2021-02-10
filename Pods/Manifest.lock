@@ -29,9 +29,15 @@ PODS:
   - nanopb/decode (2.30906.0)
   - nanopb/encode (2.30906.0)
   - PromisesObjC (1.2.11)
+  - SDWebImage (5.9.5):
+    - SDWebImage/Core (= 5.9.5)
+  - SDWebImage/Core (5.9.5)
+  - Toaster (2.3.0)
 
 DEPENDENCIES:
   - Firebase/Database
+  - SDWebImage
+  - Toaster
 
 SPEC REPOS:
   trunk:
@@ -44,6 +50,8 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - SDWebImage
+    - Toaster
 
 SPEC CHECKSUMS:
   Firebase: 78e8dd2e39d653de6270432ad84fe8b59f7bf4e8
@@ -55,7 +63,9 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
+  SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
+  Toaster: c3473963c78e8cabbf6ea6f11ad0fdaae6f54987
 
-PODFILE CHECKSUM: 4594f57f98a9d8704238ca9df5da748d045954d8
+PODFILE CHECKSUM: 8079534fff712549e0a5166344d7b1c2afe00459
 
 COCOAPODS: 1.10.0
