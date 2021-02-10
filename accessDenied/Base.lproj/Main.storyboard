@@ -166,7 +166,7 @@
                             <constraint firstItem="ntj-HZ-7Vf" firstAttribute="width" secondItem="ZNZ-KQ-TRI" secondAttribute="width" id="wRE-w5-Xz0"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Info" id="FdE-JY-Rvc"/>
+                    <tabBarItem key="tabBarItem" title="Info" selectedImage="Icon awesome-info-circle" id="FdE-JY-Rvc"/>
                     <connections>
                         <outlet property="infoTV" destination="ntj-HZ-7Vf" id="H2W-mi-qQI"/>
                         <outlet property="sponsorsCV" destination="GXY-Dt-ZR0" id="fCd-oD-utE"/>
@@ -332,21 +332,79 @@
             </objects>
             <point key="canvasLocation" x="-1043.4782608695652" y="85.59782608695653"/>
         </scene>
-        <!--Item 1-->
+        <!--Timeline-->
         <scene sceneID="ubG-pz-pl7">
             <objects>
-                <viewController id="HBM-dr-J8b" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4p4-zL-qdu">
+                <viewController id="HBM-dr-J8b" customClass="TimelineViewController" customModule="accessDenied" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5qM-Pf-oVz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="w9f-xa-8KK"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="65-1" translatesAutoresizingMaskIntoConstraints="NO" id="8WX-lu-bat">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timeline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUL-ug-ifh">
+                                <rect key="frame" x="20" y="50" width="374" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="YMK-mM-ZQ2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <color key="textColor" red="0.98893800789999997" green="1" blue="0.92868681210000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="puJ-dB-FDB">
+                                <rect key="frame" x="20" y="166" width="374" height="511"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <segmentedControl opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nW2-lQ-CiB">
+                                <rect key="frame" x="16" y="125" width="380" height="32"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <segments>
+                                    <segment title="19 March"/>
+                                    <segment title="20 March"/>
+                                    <segment title="21 March"/>
+                                </segments>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="selectedSegmentTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="keyPath">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="segmentController:" destination="HBM-dr-J8b" eventType="valueChanged" id="yaZ-nR-DdR"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SVg-Ne-pwv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nW2-lQ-CiB" firstAttribute="top" secondItem="SVg-Ne-pwv" secondAttribute="top" constant="125" id="2pW-i6-h6e"/>
+                            <constraint firstItem="SVg-Ne-pwv" firstAttribute="trailing" secondItem="puJ-dB-FDB" secondAttribute="trailing" constant="20" id="NV0-sA-jLc"/>
+                            <constraint firstItem="puJ-dB-FDB" firstAttribute="leading" secondItem="SVg-Ne-pwv" secondAttribute="leading" constant="20" id="PxW-rg-U4I"/>
+                            <constraint firstItem="LUL-ug-ifh" firstAttribute="top" secondItem="SVg-Ne-pwv" secondAttribute="top" constant="50" id="V7y-Ya-AB6"/>
+                            <constraint firstItem="SVg-Ne-pwv" firstAttribute="bottom" secondItem="puJ-dB-FDB" secondAttribute="bottom" constant="10" id="YQQ-Uh-Ch8"/>
+                            <constraint firstItem="LUL-ug-ifh" firstAttribute="leading" secondItem="SVg-Ne-pwv" secondAttribute="leading" constant="20" id="fvz-ZZ-ryb"/>
+                            <constraint firstItem="puJ-dB-FDB" firstAttribute="top" secondItem="nW2-lQ-CiB" secondAttribute="bottom" constant="10" id="gq9-ZI-G2v"/>
+                            <constraint firstItem="SVg-Ne-pwv" firstAttribute="trailing" secondItem="nW2-lQ-CiB" secondAttribute="trailing" constant="18" id="kEE-hs-AGE"/>
+                            <constraint firstItem="SVg-Ne-pwv" firstAttribute="trailing" secondItem="LUL-ug-ifh" secondAttribute="trailing" constant="20" id="vyW-OV-eg4"/>
+                            <constraint firstItem="nW2-lQ-CiB" firstAttribute="leading" secondItem="SVg-Ne-pwv" secondAttribute="leading" constant="16" id="wRD-cy-8ru"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="8Zs-sB-idG"/>
+                    <tabBarItem key="tabBarItem" title="Timeline" selectedImage="Icon material-history" id="8Zs-sB-idG"/>
+                    <connections>
+                        <outlet property="sc" destination="nW2-lQ-CiB" id="3Fw-qj-2cT"/>
+                        <outlet property="tableView" destination="puJ-dB-FDB" id="X8v-be-PJk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ujv-Wd-H6a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-158" y="86"/>
+            <point key="canvasLocation" x="-159.42028985507247" y="85.59782608695653"/>
         </scene>
         <!--Dev Info View Controller-->
         <scene sceneID="ChG-DY-Ccw">
@@ -418,6 +476,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="mSZ-aP-kHG"/>
@@ -618,7 +677,7 @@
                             <constraint firstItem="rnU-rE-WAX" firstAttribute="top" secondItem="ckK-oc-gHM" secondAttribute="top" id="z69-sn-McA"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="GXI-KH-R8t"/>
+                    <tabBarItem key="tabBarItem" title="Home" selectedImage="Icon awesome-home" id="GXI-KH-R8t"/>
                     <connections>
                         <outlet property="days" destination="GHv-gd-tPS" id="KDr-88-v47"/>
                         <outlet property="hours" destination="ReL-Rk-9qb" id="nK5-ls-Fe0"/>
@@ -703,7 +762,10 @@
         <image name="65-1" width="8000" height="5000"/>
         <image name="Hackathon Logo" width="118" height="148"/>
         <image name="IETE WHITE" width="960" height="960"/>
+        <image name="Icon awesome-home" width="29.333333969116211" height="22.666666030883789"/>
+        <image name="Icon awesome-info-circle" width="23" height="23"/>
         <image name="Icon awesome-lightbulb" width="16" height="23"/>
+        <image name="Icon material-history" width="27" height="23"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="linkedin" width="512" height="512"/>

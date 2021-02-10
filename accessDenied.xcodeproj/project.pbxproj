@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,11 @@
 		177DFB4625CAB6D600B20A21 /* DevInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177DFB4525CAB6D600B20A21 /* DevInfoViewController.swift */; };
 		177DFB4C25CAB87C00B20A21 /* DevCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177DFB4A25CAB87C00B20A21 /* DevCell.swift */; };
 		177DFB4D25CAB87C00B20A21 /* DevCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 177DFB4B25CAB87C00B20A21 /* DevCell.xib */; };
+		1782037025D3EF8400EC8BB7 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782036F25D3EF8400EC8BB7 /* TimelineViewController.swift */; };
+		178D239B25D3F7DA007459A7 /* TimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178D239925D3F7DA007459A7 /* TimelineCell.swift */; };
+		178D239C25D3F7DA007459A7 /* TimelineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 178D239A25D3F7DA007459A7 /* TimelineCell.xib */; };
+		17A8138025D4055400801887 /* ActivityViewIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A8137F25D4055300801887 /* ActivityViewIndicator.swift */; };
+		17A8138825D4084200801887 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17A8138725D4084200801887 /* Assets.xcassets */; };
 		5CA8DE3E46512FA0A97D9A1D /* Pods_accessDenied.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C2771F16C3F5997F55C1F07 /* Pods_accessDenied.framework */; };
 		A2AA69E6DE41FFC62CA47E3C /* Pods_accessDeniedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED1172FF754C4C70CC0E192 /* Pods_accessDeniedTests.framework */; };
 		AD846B2E53B84AA06F77F073 /* Pods_accessDenied_accessDeniedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 115E85E42D818171D598876B /* Pods_accessDenied_accessDeniedUITests.framework */; };
@@ -28,7 +33,6 @@
 		FDDBD78125C7A25000111DFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBD78025C7A25000111DFB /* SceneDelegate.swift */; };
 		FDDBD78325C7A25000111DFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBD78225C7A25000111DFB /* ViewController.swift */; };
 		FDDBD78625C7A25000111DFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDDBD78425C7A25000111DFB /* Main.storyboard */; };
-		FDDBD78825C7A25400111DFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDDBD78725C7A25400111DFB /* Assets.xcassets */; };
 		FDDBD78B25C7A25400111DFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDDBD78925C7A25400111DFB /* LaunchScreen.storyboard */; };
 		FDDBD79625C7A25500111DFB /* accessDeniedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBD79525C7A25500111DFB /* accessDeniedTests.swift */; };
 		FDDBD7A125C7A25500111DFB /* accessDeniedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBD7A025C7A25500111DFB /* accessDeniedUITests.swift */; };
@@ -59,6 +63,11 @@
 		177DFB4525CAB6D600B20A21 /* DevInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevInfoViewController.swift; sourceTree = "<group>"; };
 		177DFB4A25CAB87C00B20A21 /* DevCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevCell.swift; sourceTree = "<group>"; };
 		177DFB4B25CAB87C00B20A21 /* DevCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DevCell.xib; sourceTree = "<group>"; };
+		1782036F25D3EF8400EC8BB7 /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
+		178D239925D3F7DA007459A7 /* TimelineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineCell.swift; sourceTree = "<group>"; };
+		178D239A25D3F7DA007459A7 /* TimelineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineCell.xib; sourceTree = "<group>"; };
+		17A8137F25D4055300801887 /* ActivityViewIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewIndicator.swift; sourceTree = "<group>"; };
+		17A8138725D4084200801887 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C2771F16C3F5997F55C1F07 /* Pods_accessDenied.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_accessDenied.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74AD6DC9E401357895EAA865 /* Pods-accessDeniedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-accessDeniedTests.debug.xcconfig"; path = "Target Support Files/Pods-accessDeniedTests/Pods-accessDeniedTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9AF3A32DCF65A170A13AC0AB /* Pods-accessDenied-accessDeniedUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-accessDenied-accessDeniedUITests.release.xcconfig"; path = "Target Support Files/Pods-accessDenied-accessDeniedUITests/Pods-accessDenied-accessDeniedUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -82,7 +91,6 @@
 		FDDBD78025C7A25000111DFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FDDBD78225C7A25000111DFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FDDBD78525C7A25000111DFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FDDBD78725C7A25400111DFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FDDBD78A25C7A25400111DFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FDDBD78C25C7A25400111DFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDDBD79125C7A25500111DFB /* accessDeniedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = accessDeniedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,7 +140,6 @@
 				74AD6DC9E401357895EAA865 /* Pods-accessDeniedTests.debug.xcconfig */,
 				F8E0F5E92EEDB799AF434724 /* Pods-accessDeniedTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -181,6 +188,10 @@
 				FDDBD78025C7A25000111DFB /* SceneDelegate.swift */,
 				177DFB4525CAB6D600B20A21 /* DevInfoViewController.swift */,
 				FDDBD78225C7A25000111DFB /* ViewController.swift */,
+				17A8137F25D4055300801887 /* ActivityViewIndicator.swift */,
+				1782036F25D3EF8400EC8BB7 /* TimelineViewController.swift */,
+				178D239925D3F7DA007459A7 /* TimelineCell.swift */,
+				178D239A25D3F7DA007459A7 /* TimelineCell.xib */,
 				AF21BCDF25D32B83009CF417 /* infoOptionsTableViewCell.swift */,
 				AF21BCF325D34299009CF417 /* speakerViewController.swift */,
 				AF21BCF825D342AE009CF417 /* speakerMainTableViewCell.swift */,
@@ -189,8 +200,8 @@
 				AF21BCEE25D3376F009CF417 /* sponsorsCollectionViewCell.swift */,
 				AF21BCE925D32F66009CF417 /* detailViewController.swift */,
 				FDDBD78425C7A25000111DFB /* Main.storyboard */,
+				17A8138725D4084200801887 /* Assets.xcassets */,
 				AF21BD0725D34F7E009CF417 /* BebasNeue-Regular.ttf */,
-				FDDBD78725C7A25400111DFB /* Assets.xcassets */,
 				FDDBD78925C7A25400111DFB /* LaunchScreen.storyboard */,
 				FD2320BD25D3BEFA001414C2 /* GoogleService-Info.plist */,
 				FDDBD78C25C7A25400111DFB /* Info.plist */,
@@ -325,9 +336,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDDBD78B25C7A25400111DFB /* LaunchScreen.storyboard in Resources */,
-				FDDBD78825C7A25400111DFB /* Assets.xcassets in Resources */,
+				178D239C25D3F7DA007459A7 /* TimelineCell.xib in Resources */,
 				FDDBD78625C7A25000111DFB /* Main.storyboard in Resources */,
 				177DFB4D25CAB87C00B20A21 /* DevCell.xib in Resources */,
+				17A8138825D4084200801887 /* Assets.xcassets in Resources */,
 				FD2320BE25D3BEFA001414C2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,11 +474,14 @@
 				AF21BCEF25D3376F009CF417 /* sponsorsCollectionViewCell.swift in Sources */,
 				AF21BCF425D34299009CF417 /* speakerViewController.swift in Sources */,
 				AF21BCE525D32B90009CF417 /* infoViewController.swift in Sources */,
+				178D239B25D3F7DA007459A7 /* TimelineCell.swift in Sources */,
 				AF21BCEA25D32F66009CF417 /* detailViewController.swift in Sources */,
 				AF21BD0325D34A87009CF417 /* Model.swift in Sources */,
 				FDDBD7C125C7FD6B00111DFB /* Utility.swift in Sources */,
 				FDDBD78325C7A25000111DFB /* ViewController.swift in Sources */,
 				AF21BCF925D342AE009CF417 /* speakerMainTableViewCell.swift in Sources */,
+				1782037025D3EF8400EC8BB7 /* TimelineViewController.swift in Sources */,
+				17A8138025D4055400801887 /* ActivityViewIndicator.swift in Sources */,
 				FDDBD77F25C7A25000111DFB /* AppDelegate.swift in Sources */,
 				1741C19C25C9C52800DFBDF9 /* FaqViewController.swift in Sources */,
 				1741C1A225C9CAA000DFBDF9 /* FaqCell.swift in Sources */,
