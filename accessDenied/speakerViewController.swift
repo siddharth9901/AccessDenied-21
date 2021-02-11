@@ -41,13 +41,11 @@ class speakerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.activityIndicatorView = ActivityIndicatorView(title: "Loading...", center: self.view.center)
-            self.view.addSubview(self.activityIndicatorView.getViewActivityIndicator())
-        
+
         speakerTV.delegate = self
         speakerTV.dataSource = self
         if(self.checkForInternetConnection() == true){
-            activityIndicatorView.startAnimating()
+            startLoadData()
             loadData()
         }else{
             speakers = [speakerModel(name:"Unavailable",designation: "Desingation Unavailable",description: "Details Unavailable ",  image: "https://st.depositphotos.com/2101611/4338/v/600/depositphotos_43381243-stock-illustration-male-avatar-profile-picture.jpg", link: "Link Unavailable", date: "", time: "", isOpen: "False")]
@@ -57,6 +55,13 @@ class speakerViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func startLoadData(){
+        self.activityIndicatorView = ActivityIndicatorView(title: "Loading...", center: self.view.center)
+            self.view.addSubview(self.activityIndicatorView.getViewActivityIndicator())
+        
+        activityIndicatorView.startAnimating()
+    }
+    
     func loadData() {
         ref = Database.database().reference().child("Speakers")
                 ref?.observe(DataEventType.value, with: {
@@ -64,7 +69,6 @@ class speakerViewController: UIViewController {
                     self.speakers = [ ]
                     self.activityIndicatorView.stopAnimating()
                     if(snapshot.childrenCount>0){
-                      //  print("\n",EventDate,"\n",snapshot);
 //                        self.timelineList.removeAll()
 //
 //
@@ -80,7 +84,6 @@ class speakerViewController: UIViewController {
                          
                             self.speakers.append(item)
                             self.speakerTV.reloadData()
-                            print("\n",self.speakers)
                         }
                       //  self.tableView.reloadData()
 //

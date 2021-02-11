@@ -49,10 +49,6 @@ class TimelineViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.activityIndicatorView = ActivityIndicatorView(title: "Loading...", center: self.view.center)
-            self.view.addSubview(self.activityIndicatorView.getViewActivityIndicator())
-
-        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "TimelineCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
@@ -61,12 +57,24 @@ class TimelineViewController: UIViewController {
         
         sc.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.gray], for: .normal)
         
-        if(self.checkForInternetConnection() == true){
-            activityIndicatorView.startAnimating()
-            loadData(EventDate: "19")
-        }
+     
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if(self.checkForInternetConnection() == true){
+            startLoadData()
+            loadData(EventDate: "19")
+        }
+    }
+    
+    func startLoadData(){
+        self.activityIndicatorView = ActivityIndicatorView(title: "Loading...", center: self.view.center)
+            self.view.addSubview(self.activityIndicatorView.getViewActivityIndicator())
+
+        activityIndicatorView.startAnimating()
+    }
+    
     
     func loadData(EventDate: String) {
         
@@ -76,7 +84,6 @@ class TimelineViewController: UIViewController {
                     self.events = [ ]
                     self.activityIndicatorView.stopAnimating()
                     if(snapshot.childrenCount>0){
-                        print("\n",EventDate,"\n",snapshot);
 //                        self.timelineList.removeAll()
 //
 //
@@ -91,7 +98,6 @@ class TimelineViewController: UIViewController {
                             let item = event(StartTime: cellObject?["StartTime"] as! String? ?? "Failed to load StartTime", EndTime: cellObject?["EndTime"] as! String? ?? "Failed to load EndTime",description: cellObject?["EventName"] as! String? ?? "Failed to load EventDescription", meetLink: cellObject?["Link"] as! String? ?? "", dp: cellObject?["SpeakerPhoto"] as! String? ?? "")
                             self.events.append(item)
                             self.tableView.reloadData()
-                            print("\n",self.events)
                         }
                       //  self.tableView.reloadData()
 //
@@ -113,8 +119,9 @@ class TimelineViewController: UIViewController {
         
         
         if sender.selectedSegmentIndex == 0{
-            activityIndicatorView.startAnimating()
+            
             if(self.checkForInternetConnection() == true){
+                startLoadData()
                 loadData(EventDate: "19")
             }
            
@@ -122,15 +129,17 @@ class TimelineViewController: UIViewController {
         }
          
         else if sender.selectedSegmentIndex == 1{
-            activityIndicatorView.startAnimating()
+           
             if(self.checkForInternetConnection() == true){
+                startLoadData()
                 loadData(EventDate: "20")
             }
         }
         
         else{
-            activityIndicatorView.startAnimating()
+           
             if(self.checkForInternetConnection() == true){
+                startLoadData()
                 loadData(EventDate: "21")
             }
         }
@@ -162,7 +171,6 @@ extension TimelineViewController: UITableViewDataSource,UITableViewDelegate{
         }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //print(events)
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath) as! TimelineCell
         cell.time?.text = "\(events[indexPath.section].StartTime) - \(events[indexPath.section].EndTime)"
         cell.descripLabel?.text = events[indexPath.section].description
@@ -204,7 +212,6 @@ extension TimelineViewController: UITableViewDataSource,UITableViewDelegate{
         //Hiding the buttons
         let meet = events[indexPath.section].meetLink.count
         if meet == 0{
-            //print(events[indexPath.section].description)
             cell.copyBtnOutlet.setImage(nil, for: .normal)
             cell.copyBtnOutlet.isHidden = true
             
@@ -217,8 +224,6 @@ extension TimelineViewController: UITableViewDataSource,UITableViewDelegate{
             cell.copyBtnOutlet.isHidden = false
             cell.copyBtnOutlet.setImage(UIImage(systemName:  "doc.on.clipboard.fill"), for: .normal)
         }
-        print("????//////////////////////")
-        print("",cell.playButtonOutlet.isHidden)
         return cell
     }
 }
@@ -236,7 +241,6 @@ extension TimelineViewController: CellDelegateT2{
     func copyBtnTapped(tag: Int) {
         let MeetLink = events[tag].meetLink
         UIPasteboard.general.string = MeetLink
-        print("pressed")
         let toast = Toast(text: "Meeting Link copied")
         toast.show()
         ToastView.appearance().backgroundColor = UIColor.gray

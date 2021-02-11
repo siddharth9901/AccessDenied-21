@@ -74,11 +74,11 @@ extension DevInfoViewController: UITableViewDataSource, UITableViewDelegate{
         cell.delegate = self
         cell.linkedInBtn.tag = indexPath.section
         cell.linkedInBtn.setTitle("\(indexPath.section)", for: .normal)
-        
+        cell.nameLabel?.textColor = UIColor.black
+        cell.skillLabel?.textColor = UIColor.black
         cell.delegate2 = self
         cell.gitBtn.tag = indexPath.section
         cell.gitBtn.setTitle("\(indexPath.section)", for: .normal)
-        print(developers)
         return cell
     }
     
@@ -87,7 +87,6 @@ extension DevInfoViewController: UITableViewDataSource, UITableViewDelegate{
 
 extension DevInfoViewController: CellDelegate{
     func CellBtnTapped(tag: Int) {
-        print(tag)
         
         // Adding web view
         let vc = SFSafariViewController(url: URL(string: developers[tag].linkedInUrl)!)

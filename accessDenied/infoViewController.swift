@@ -45,13 +45,14 @@ class infoViewController: UIViewController {
     override func viewDidLoad() {
        
         super.viewDidLoad()
-        self.activityIndicatorView = ActivityIndicatorView(title: "Loading...", center: self.view.center)
-            self.view.addSubview(self.activityIndicatorView.getViewActivityIndicator())
-        
+
         infoTV.delegate = self
         infoTV.dataSource = self
         infoTV.reloadData()
         if(self.checkForInternetConnection() == true){
+            self.activityIndicatorView = ActivityIndicatorView(title: "Loading...", center: self.view.center)
+                self.view.addSubview(self.activityIndicatorView.getViewActivityIndicator())
+            
             activityIndicatorView.startAnimating()
             loadData()
         }
@@ -90,7 +91,6 @@ class infoViewController: UIViewController {
                               
                                 self.sponsors.append(item)
                                 self.sponsorsCV.reloadData()
-                                print("\n",self.sponsors)
                             }
                          
                             //Mark: - Offline functionalities

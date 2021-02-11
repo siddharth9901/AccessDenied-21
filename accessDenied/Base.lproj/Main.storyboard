@@ -504,7 +504,7 @@
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="selectedSegmentTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="keyPath">
+                                    <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
@@ -987,16 +987,19 @@
                                     <constraint firstAttribute="width" constant="335" id="ECF-Xu-sgf"/>
                                     <constraint firstAttribute="height" constant="40" id="a2e-qQ-fxZ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <state key="normal" title="Become a Campus Ambassador">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="campusAmbassador:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l2D-9b-sts"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gqn-rL-sZf">
                                 <rect key="frame" x="39.666666666666657" y="567" width="335" height="40"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5VS-sc-sPN">
-                                        <rect key="frame" x="180" y="0.0" width="155" height="40"/>
+                                        <rect key="frame" x="170" y="0.0" width="165" height="40"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Discord_white" translatesAutoresizingMaskIntoConstraints="NO" id="zMs-In-zxw">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -1007,26 +1010,35 @@
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QB7-xW-osC">
-                                                <rect key="frame" x="40.000000000000028" y="0.0" width="115" height="40"/>
+                                                <rect key="frame" x="40" y="0.0" width="125" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="hcv-CK-dKe"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                 <state key="normal" title="Join Discord">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jx5-ap-uyv">
+                                                <rect key="frame" x="0.0" y="0.0" width="165" height="40"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="QB7-xW-osC" firstAttribute="leading" secondItem="zMs-In-zxw" secondAttribute="trailing" id="3hM-Dl-pnD"/>
+                                            <constraint firstAttribute="trailing" secondItem="jx5-ap-uyv" secondAttribute="trailing" id="40d-kG-A18"/>
                                             <constraint firstItem="zMs-In-zxw" firstAttribute="top" secondItem="5VS-sc-sPN" secondAttribute="top" id="9me-FH-M30"/>
                                             <constraint firstAttribute="trailing" secondItem="QB7-xW-osC" secondAttribute="trailing" id="Jmo-M6-Y9X"/>
                                             <constraint firstItem="zMs-In-zxw" firstAttribute="leading" secondItem="5VS-sc-sPN" secondAttribute="leading" id="Knb-bG-jHh"/>
-                                            <constraint firstAttribute="width" constant="155" id="Y1U-qR-fEy"/>
+                                            <constraint firstItem="jx5-ap-uyv" firstAttribute="leading" secondItem="5VS-sc-sPN" secondAttribute="leading" id="Rm0-Fx-whZ"/>
+                                            <constraint firstItem="jx5-ap-uyv" firstAttribute="top" secondItem="5VS-sc-sPN" secondAttribute="top" id="VDq-u5-R48"/>
+                                            <constraint firstAttribute="width" constant="165" id="Y1U-qR-fEy"/>
                                             <constraint firstAttribute="height" constant="40" id="dnQ-Qh-bwP"/>
                                             <constraint firstAttribute="bottom" secondItem="zMs-In-zxw" secondAttribute="bottom" id="jDT-va-C2b"/>
                                             <constraint firstItem="QB7-xW-osC" firstAttribute="top" secondItem="5VS-sc-sPN" secondAttribute="top" id="lc9-m8-Xfz"/>
                                             <constraint firstAttribute="bottom" secondItem="QB7-xW-osC" secondAttribute="bottom" id="nDQ-hl-XUl"/>
+                                            <constraint firstAttribute="bottom" secondItem="jx5-ap-uyv" secondAttribute="bottom" id="tQW-qj-Dlc"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNo-fn-oeg">
@@ -1034,7 +1046,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="155" id="QPr-pw-8Nl"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                         <state key="normal" title="Register Now">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -1147,6 +1159,7 @@
                         <outlet property="campusAmb" destination="itu-iL-EqC" id="piD-hX-Xx8"/>
                         <outlet property="days" destination="GHv-gd-tPS" id="KDr-88-v47"/>
                         <outlet property="discord" destination="5VS-sc-sPN" id="9v6-8c-7KZ"/>
+                        <outlet property="discordView" destination="jx5-ap-uyv" id="KhO-jS-s4W"/>
                         <outlet property="hours" destination="ReL-Rk-9qb" id="nK5-ls-Fe0"/>
                         <outlet property="minutes" destination="xp0-Hf-z68" id="OPE-mS-emY"/>
                         <outlet property="register" destination="sNo-fn-oeg" id="gTJ-1I-dc0"/>
@@ -1175,7 +1188,7 @@
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgF-s2-JT7">
-                                <rect key="frame" x="20" y="260" width="374" height="456"/>
+                                <rect key="frame" x="10" y="260" width="394" height="456"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1203,12 +1216,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="qfp-9V-JNU" firstAttribute="top" secondItem="lDK-fc-8v5" secondAttribute="top" constant="44" id="32q-jw-4He"/>
-                            <constraint firstItem="lDK-fc-8v5" firstAttribute="trailing" secondItem="ZgF-s2-JT7" secondAttribute="trailing" constant="20" id="Bho-X0-imv"/>
+                            <constraint firstItem="lDK-fc-8v5" firstAttribute="trailing" secondItem="ZgF-s2-JT7" secondAttribute="trailing" constant="10" id="Bho-X0-imv"/>
                             <constraint firstItem="lDK-fc-8v5" firstAttribute="trailing" secondItem="qfp-9V-JNU" secondAttribute="trailing" constant="109" id="CwU-PN-mCV"/>
                             <constraint firstItem="z8g-Pn-Eah" firstAttribute="leading" secondItem="lDK-fc-8v5" secondAttribute="leading" id="Ep8-A7-X3u"/>
                             <constraint firstItem="ZgF-s2-JT7" firstAttribute="top" secondItem="qfp-9V-JNU" secondAttribute="bottom" constant="20" id="Hew-la-Dea"/>
                             <constraint firstItem="emy-sv-y9o" firstAttribute="top" secondItem="lDK-fc-8v5" secondAttribute="top" constant="44" id="L6X-Cd-htZ"/>
-                            <constraint firstItem="ZgF-s2-JT7" firstAttribute="leading" secondItem="lDK-fc-8v5" secondAttribute="leading" constant="20" id="Nut-CP-Kaa"/>
+                            <constraint firstItem="ZgF-s2-JT7" firstAttribute="leading" secondItem="lDK-fc-8v5" secondAttribute="leading" constant="10" id="Nut-CP-Kaa"/>
                             <constraint firstItem="z8g-Pn-Eah" firstAttribute="top" secondItem="lDK-fc-8v5" secondAttribute="top" id="QvH-fn-39Y"/>
                             <constraint firstItem="qfp-9V-JNU" firstAttribute="centerX" secondItem="lDK-fc-8v5" secondAttribute="centerX" id="Rkt-mP-zx9"/>
                             <constraint firstItem="lDK-fc-8v5" firstAttribute="bottom" secondItem="z8g-Pn-Eah" secondAttribute="bottom" id="fAG-vF-DP6"/>

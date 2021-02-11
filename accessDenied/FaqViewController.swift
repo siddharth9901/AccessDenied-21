@@ -24,22 +24,25 @@ class FaqViewController: UIViewController {
     var ref: DatabaseReference!
     var databaseHandle: DatabaseHandle?
     var faqs: [faqModel] = [faqModel(Answer: "Unavailable", Question: "Unavailable" , isOpen: "False")]
-    let cellSpacingHeight: CGFloat = 20//;;;;
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.activityIndicatorView = ActivityIndicatorView(title: "Loading...", center: self.view.center)
-            self.view.addSubview(self.activityIndicatorView.getViewActivityIndicator())
 
         faqTV.delegate = self
         faqTV.dataSource = self
-        if(self.checkForInternetConnection() == true){
-            activityIndicatorView.startAnimating()
-            loadData()
-        }
+      
         self.faqTV.reloadData()
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if(self.checkForInternetConnection() == true){
+            self.activityIndicatorView = ActivityIndicatorView(title: "Loading...", center: self.view.center)
+                self.view.addSubview(self.activityIndicatorView.getViewActivityIndicator())
+            activityIndicatorView.startAnimating()
+            loadData()
+        }
+    }
    
     func loadData() {
         ref = Database.database().reference().child("FAQ")
@@ -47,28 +50,19 @@ class FaqViewController: UIViewController {
                     (snapshot) in
                     self.faqs = [ ]
                     self.activityIndicatorView.stopAnimating()
-                  //  self.activityIndicatorView.stopAnimating()
                     if(snapshot.childrenCount>0){
-                      //  print("\n",EventDate,"\n",snapshot);
-//                        self.timelineList.removeAll()
-//
-//
                         for cellContents in snapshot.children.allObjects as!  [DataSnapshot]
                         {
                             let cellObject = cellContents.value as? [String: AnyObject]
                             
-//                            let cellName = cellObject?["name"]
-//                            let cellTime = cellObject?["time"]
-//                            let cellImage = cellObject?["image"]
 //
                             let item = faqModel(Answer: cellObject?["Answer"] as! String? ?? "Failed to load answer", Question: cellObject?["Question"] as! String? ?? "Failed to load question", isOpen: cellObject?["isOpen"] as! String? ?? "False")
                           
                             self.faqs.append(item)
                             self.faqTV.reloadData()
-                            print("\n",self.faqs)
                         }
                       //  self.tableView.reloadData()
-//
+                        
                         //Mark: - Offline functionalities
                         self.ref?.keepSynced(true)
                     }
@@ -101,16 +95,6 @@ extension FaqViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-            return cellSpacingHeight
-        }//;;;
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-            let headerView = UIView()
-            headerView.backgroundColor = UIColor.clear
-            return headerView
-        }//;;;
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0{
@@ -118,7 +102,7 @@ extension FaqViewController: UITableViewDelegate, UITableViewDataSource {
             cell.question.text = faqs[indexPath.section].Question
             cell.layer.backgroundColor = #colorLiteral(red: 0.2431372549, green: 0.2431372549, blue: 0.2431372549, alpha: 0.64)
             cell.question.textColor = UIColor.dayLabelColour
-           //cell.layer.cornerRadius = 16
+           // cell.layer.cornerRadius = 16
            // cell.clipsToBounds = true
             
             
@@ -130,7 +114,7 @@ extension FaqViewController: UITableViewDelegate, UITableViewDataSource {
             cell.answer.text = faqs[indexPath.section].Answer
             cell.answer.textColor = UIColor.dayLabelColour
             cell.layer.backgroundColor = #colorLiteral(red: 0.2431372549, green: 0.2431372549, blue: 0.2431372549, alpha: 0.64)
-           //cell.layer.cornerRadius = 16
+            //cell.layer.cornerRadius = 16
             //cell.clipsToBounds = true
             return cell
         }
