@@ -9,7 +9,7 @@ target 'accessDenied' do
     pod 'Firebase/Database'
     pod 'SDWebImage'
     pod 'Toaster'
-
+    pod 'IQKeyboardManagerSwift'
 
   target 'accessDeniedTests' do
     inherit! :search_paths

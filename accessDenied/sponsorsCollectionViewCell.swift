@@ -8,6 +8,7 @@
 import UIKit
 
 class sponsorsCollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet weak var sponsorImage: UIImageView!
     
 }

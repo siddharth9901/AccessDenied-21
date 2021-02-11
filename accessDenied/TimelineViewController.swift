@@ -28,7 +28,7 @@ class TimelineViewController: UIViewController {
    
   
 
-    var events = [event(StartTime: "Loading Start Time",EndTime: "Loading End Time", description: "Loading Description", meetLink: "Loading Link", dp: "https://st.depositphotos.com/2101611/4338/v/600/depositphotos_43381243-stock-illustration-male-avatar-profile-picture.jpg")]
+    var events = [event(StartTime: "Loading Start Time",EndTime: "Loading End Time", description: "Loading Description", meetLink: "", dp: "")]
     //_______>
     
     
@@ -60,8 +60,11 @@ class TimelineViewController: UIViewController {
         sc.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
         
         sc.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.gray], for: .normal)
-        activityIndicatorView.startAnimating()
-       loadData(EventDate: "17")
+        
+        if(self.checkForInternetConnection() == true){
+            activityIndicatorView.startAnimating()
+            loadData(EventDate: "19")
+        }
         
     }
     
@@ -111,21 +114,25 @@ class TimelineViewController: UIViewController {
         
         if sender.selectedSegmentIndex == 0{
             activityIndicatorView.startAnimating()
-             loadData(EventDate: "19")
+            if(self.checkForInternetConnection() == true){
+                loadData(EventDate: "19")
+            }
            
             
         }
          
         else if sender.selectedSegmentIndex == 1{
             activityIndicatorView.startAnimating()
-            loadData(EventDate: "20")
-           
+            if(self.checkForInternetConnection() == true){
+                loadData(EventDate: "20")
+            }
         }
         
         else{
             activityIndicatorView.startAnimating()
-            loadData(EventDate: "21")
-            
+            if(self.checkForInternetConnection() == true){
+                loadData(EventDate: "21")
+            }
         }
         
     }
@@ -230,10 +237,12 @@ extension TimelineViewController: CellDelegateT2{
         let MeetLink = events[tag].meetLink
         UIPasteboard.general.string = MeetLink
         print("pressed")
-        let toast = Toast(text: "Meeting Link coppied")
+        let toast = Toast(text: "Meeting Link copied")
         toast.show()
-        ToastView.appearance().backgroundColor = Colors.faqCellBackground
+        ToastView.appearance().backgroundColor = UIColor.gray
         ToastView.appearance().textColor = Colors.faqText
+        ToastView.appearance().bottomOffsetPortrait = self.view.frame.height/2
+        ToastView.appearance().font = UIFont(name: "System Medium", size: 20)
     }
 }
 

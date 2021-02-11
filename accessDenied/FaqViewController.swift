@@ -19,6 +19,7 @@ struct faqModel{
 
 class FaqViewController: UIViewController {
     
+    var activityIndicatorView: ActivityIndicatorView!
     @IBOutlet weak var faqTV: UITableView!
     var ref: DatabaseReference!
     var databaseHandle: DatabaseHandle?
@@ -26,9 +27,15 @@ class FaqViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.activityIndicatorView = ActivityIndicatorView(title: "Loading...", center: self.view.center)
+            self.view.addSubview(self.activityIndicatorView.getViewActivityIndicator())
+
         faqTV.delegate = self
         faqTV.dataSource = self
-        loadData()
+        if(self.checkForInternetConnection() == true){
+            activityIndicatorView.startAnimating()
+            loadData()
+        }
         self.faqTV.reloadData()
         
     }
@@ -39,6 +46,7 @@ class FaqViewController: UIViewController {
                 ref?.observe(DataEventType.value, with: {
                     (snapshot) in
                     self.faqs = [ ]
+                    self.activityIndicatorView.stopAnimating()
                   //  self.activityIndicatorView.stopAnimating()
                     if(snapshot.childrenCount>0){
                       //  print("\n",EventDate,"\n",snapshot);

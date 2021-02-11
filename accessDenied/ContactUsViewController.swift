@@ -139,7 +139,7 @@ class ContactUsViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func websiteBtn(_ sender: Any) {
-        website(link: "https://www.ietevit.com/accessdenied")
+        self.website(link: "https://www.ietevit.com/accessdenied")
     }
     
     
@@ -175,15 +175,7 @@ class ContactUsViewController: UIViewController, UITextViewDelegate {
         }
     }
     
-    func website(link: String){
-        
-        guard let url = URL(string: link) else {
-                              return
-        }
-        let safariVC = SFSafariViewController(url: url)
-        present(safariVC, animated: true, completion: nil)
-    }
-    
+ 
     /*
     // MARK: - Navigation
 

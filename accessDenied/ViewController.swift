@@ -14,12 +14,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var seconds: UILabel!
     @IBOutlet weak var minutes: UILabel!
     @IBOutlet weak var register: UIButton!
+    @IBOutlet weak var discord: UIView!
+    @IBOutlet weak var campusAmb: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setColors()
         register.setGradientBackground(colorOne: Colors.buttonRight, colorTwo: Colors.buttonLeft)
         register.layer.cornerRadius = 20
         register.clipsToBounds = true
+        discord.setGradientBackground(colorOne: Colors.buttonRight, colorTwo: Colors.buttonLeft)
+        discord.layer.cornerRadius = 20
+        discord.clipsToBounds = true
+        campusAmb.setGradientBackground(colorOne: Colors.buttonRight, colorTwo: Colors.buttonLeft)
+        campusAmb.layer.cornerRadius = 20
+        campusAmb.clipsToBounds = true
         runCountdown()
        
     }

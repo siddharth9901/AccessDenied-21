@@ -75,6 +75,7 @@ extension DevInfoViewController: UITableViewDataSource, UITableViewDelegate{
         cell.delegate2 = self
         cell.gitBtn.tag = indexPath.section
         cell.gitBtn.setTitle("\(indexPath.section)", for: .normal)
+        print(developers)
         return cell
     }
     

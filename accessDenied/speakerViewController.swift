@@ -27,7 +27,7 @@ class speakerViewController: UIViewController {
         var ref: DatabaseReference!
         var databaseHandle: DatabaseHandle?
         //var postData = [[String]]()
-        
+    var activityIndicatorView: ActivityIndicatorView!
  
     
       
@@ -40,9 +40,18 @@ class speakerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.activityIndicatorView = ActivityIndicatorView(title: "Loading...", center: self.view.center)
+            self.view.addSubview(self.activityIndicatorView.getViewActivityIndicator())
+        
         speakerTV.delegate = self
         speakerTV.dataSource = self
-        loadData()
+        if(self.checkForInternetConnection() == true){
+            activityIndicatorView.startAnimating()
+            loadData()
+        }else{
+            speakers = [speakerModel(name:"Unavailable",designation: "Desingation Unavailable",description: "Details Unavailable ",  image: "https://st.depositphotos.com/2101611/4338/v/600/depositphotos_43381243-stock-illustration-male-avatar-profile-picture.jpg", link: "Link Unavailable", date: "", time: "", isOpen: "False")]
+        }
         self.speakerTV.reloadData()
 
         // Do any additional setup after loading the view.
@@ -53,7 +62,7 @@ class speakerViewController: UIViewController {
                 ref?.observe(DataEventType.value, with: {
                     (snapshot) in
                     self.speakers = [ ]
-                  //  self.activityIndicatorView.stopAnimating()
+                    self.activityIndicatorView.stopAnimating()
                     if(snapshot.childrenCount>0){
                       //  print("\n",EventDate,"\n",snapshot);
 //                        self.timelineList.removeAll()
