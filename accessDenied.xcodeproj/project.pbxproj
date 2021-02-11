@@ -27,8 +27,10 @@
 		AF21BCF425D34299009CF417 /* speakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21BCF325D34299009CF417 /* speakerViewController.swift */; };
 		AF21BCF925D342AE009CF417 /* speakerMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21BCF825D342AE009CF417 /* speakerMainTableViewCell.swift */; };
 		AF21BCFE25D342C6009CF417 /* speakerInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21BCFD25D342C6009CF417 /* speakerInfoTableViewCell.swift */; };
-		AF21BD0325D34A87009CF417 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21BD0225D34A87009CF417 /* Model.swift */; };
 		FD2320BE25D3BEFA001414C2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD2320BD25D3BEFA001414C2 /* GoogleService-Info.plist */; };
+		FD596DFB25D45FC500595B0A /* FaqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD596DFA25D45FC500595B0A /* FaqTableViewCell.swift */; };
+		FD596E0025D4649200595B0A /* FaqAnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD596DFF25D4649200595B0A /* FaqAnswerTableViewCell.swift */; };
+		FD596E5925D4775000595B0A /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD596E5825D4775000595B0A /* ContactUsViewController.swift */; };
 		FDDBD77F25C7A25000111DFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBD77E25C7A25000111DFB /* AppDelegate.swift */; };
 		FDDBD78125C7A25000111DFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBD78025C7A25000111DFB /* SceneDelegate.swift */; };
 		FDDBD78325C7A25000111DFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBD78225C7A25000111DFB /* ViewController.swift */; };
@@ -79,13 +81,15 @@
 		AF21BCF325D34299009CF417 /* speakerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = speakerViewController.swift; sourceTree = "<group>"; };
 		AF21BCF825D342AE009CF417 /* speakerMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = speakerMainTableViewCell.swift; sourceTree = "<group>"; };
 		AF21BCFD25D342C6009CF417 /* speakerInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = speakerInfoTableViewCell.swift; sourceTree = "<group>"; };
-		AF21BD0225D34A87009CF417 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		AF21BD0725D34F7E009CF417 /* BebasNeue-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Regular.ttf"; sourceTree = "<group>"; };
 		CED1172FF754C4C70CC0E192 /* Pods_accessDeniedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_accessDeniedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E57FB910828E649B4E892AD9 /* Pods-accessDenied.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-accessDenied.release.xcconfig"; path = "Target Support Files/Pods-accessDenied/Pods-accessDenied.release.xcconfig"; sourceTree = "<group>"; };
 		F05B4E54822432FC3A7F6BCA /* Pods-accessDenied.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-accessDenied.debug.xcconfig"; path = "Target Support Files/Pods-accessDenied/Pods-accessDenied.debug.xcconfig"; sourceTree = "<group>"; };
 		F8E0F5E92EEDB799AF434724 /* Pods-accessDeniedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-accessDeniedTests.release.xcconfig"; path = "Target Support Files/Pods-accessDeniedTests/Pods-accessDeniedTests.release.xcconfig"; sourceTree = "<group>"; };
 		FD2320BD25D3BEFA001414C2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FD596DFA25D45FC500595B0A /* FaqTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqTableViewCell.swift; sourceTree = "<group>"; };
+		FD596DFF25D4649200595B0A /* FaqAnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqAnswerTableViewCell.swift; sourceTree = "<group>"; };
+		FD596E5825D4775000595B0A /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		FDDBD77B25C7A25000111DFB /* accessDenied.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = accessDenied.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDDBD77E25C7A25000111DFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDDBD78025C7A25000111DFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -180,11 +184,11 @@
 			children = (
 				FDDBD77E25C7A25000111DFB /* AppDelegate.swift */,
 				1741C1A025C9CAA000DFBDF9 /* FaqCell.swift */,
-				AF21BD0225D34A87009CF417 /* Model.swift */,
 				FDDBD7C025C7FD6B00111DFB /* Utility.swift */,
 				177DFB4A25CAB87C00B20A21 /* DevCell.swift */,
 				177DFB4B25CAB87C00B20A21 /* DevCell.xib */,
 				1741C19B25C9C52800DFBDF9 /* FaqViewController.swift */,
+				FD596DFA25D45FC500595B0A /* FaqTableViewCell.swift */,
 				FDDBD78025C7A25000111DFB /* SceneDelegate.swift */,
 				177DFB4525CAB6D600B20A21 /* DevInfoViewController.swift */,
 				FDDBD78225C7A25000111DFB /* ViewController.swift */,
@@ -193,6 +197,7 @@
 				178D239925D3F7DA007459A7 /* TimelineCell.swift */,
 				178D239A25D3F7DA007459A7 /* TimelineCell.xib */,
 				AF21BCDF25D32B83009CF417 /* infoOptionsTableViewCell.swift */,
+				FD596E5825D4775000595B0A /* ContactUsViewController.swift */,
 				AF21BCF325D34299009CF417 /* speakerViewController.swift */,
 				AF21BCF825D342AE009CF417 /* speakerMainTableViewCell.swift */,
 				AF21BCFD25D342C6009CF417 /* speakerInfoTableViewCell.swift */,
@@ -200,6 +205,7 @@
 				AF21BCEE25D3376F009CF417 /* sponsorsCollectionViewCell.swift */,
 				AF21BCE925D32F66009CF417 /* detailViewController.swift */,
 				FDDBD78425C7A25000111DFB /* Main.storyboard */,
+				FD596DFF25D4649200595B0A /* FaqAnswerTableViewCell.swift */,
 				17A8138725D4084200801887 /* Assets.xcassets */,
 				AF21BD0725D34F7E009CF417 /* BebasNeue-Regular.ttf */,
 				FDDBD78925C7A25400111DFB /* LaunchScreen.storyboard */,
@@ -470,22 +476,24 @@
 			files = (
 				AF21BCE025D32B83009CF417 /* infoOptionsTableViewCell.swift in Sources */,
 				177DFB4625CAB6D600B20A21 /* DevInfoViewController.swift in Sources */,
+				FD596E5925D4775000595B0A /* ContactUsViewController.swift in Sources */,
 				AF21BCFE25D342C6009CF417 /* speakerInfoTableViewCell.swift in Sources */,
 				AF21BCEF25D3376F009CF417 /* sponsorsCollectionViewCell.swift in Sources */,
 				AF21BCF425D34299009CF417 /* speakerViewController.swift in Sources */,
 				AF21BCE525D32B90009CF417 /* infoViewController.swift in Sources */,
 				178D239B25D3F7DA007459A7 /* TimelineCell.swift in Sources */,
 				AF21BCEA25D32F66009CF417 /* detailViewController.swift in Sources */,
-				AF21BD0325D34A87009CF417 /* Model.swift in Sources */,
 				FDDBD7C125C7FD6B00111DFB /* Utility.swift in Sources */,
 				FDDBD78325C7A25000111DFB /* ViewController.swift in Sources */,
 				AF21BCF925D342AE009CF417 /* speakerMainTableViewCell.swift in Sources */,
 				1782037025D3EF8400EC8BB7 /* TimelineViewController.swift in Sources */,
 				17A8138025D4055400801887 /* ActivityViewIndicator.swift in Sources */,
 				FDDBD77F25C7A25000111DFB /* AppDelegate.swift in Sources */,
+				FD596E0025D4649200595B0A /* FaqAnswerTableViewCell.swift in Sources */,
 				1741C19C25C9C52800DFBDF9 /* FaqViewController.swift in Sources */,
 				1741C1A225C9CAA000DFBDF9 /* FaqCell.swift in Sources */,
 				FDDBD78125C7A25000111DFB /* SceneDelegate.swift in Sources */,
+				FD596DFB25D45FC500595B0A /* FaqTableViewCell.swift in Sources */,
 				177DFB4C25CAB87C00B20A21 /* DevCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -111,20 +111,20 @@ class TimelineViewController: UIViewController {
         
         if sender.selectedSegmentIndex == 0{
             activityIndicatorView.startAnimating()
-             loadData(EventDate: "17")
+             loadData(EventDate: "19")
            
             
         }
          
         else if sender.selectedSegmentIndex == 1{
             activityIndicatorView.startAnimating()
-            loadData(EventDate: "18")
+            loadData(EventDate: "20")
            
         }
         
         else{
             activityIndicatorView.startAnimating()
-            loadData(EventDate: "19")
+            loadData(EventDate: "21")
             
         }
         

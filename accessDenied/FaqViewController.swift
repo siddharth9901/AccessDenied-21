@@ -9,78 +9,130 @@
 // Url: Ans to FAQ
 
 import UIKit
+import FirebaseDatabase
+
+struct faqModel{
+    var Answer: String
+    var Question: String
+    var isOpen : String
+}
 
 class FaqViewController: UIViewController {
     
-    let tableView: UITableView = {
-        let tb = UITableView()
-        tb.translatesAutoresizingMaskIntoConstraints = false
-        tb.backgroundColor = .clear
-        return tb
-    }( )
+    @IBOutlet weak var faqTV: UITableView!
+    var ref: DatabaseReference!
+    var databaseHandle: DatabaseHandle?
+    var faqs: [faqModel] = [faqModel(Answer: "Unavailable", Question: "Unavailable" , isOpen: "False")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.separatorColor = .clear;
-        self.tableView.backgroundColor = .clear;
-        setupTableView()
+        faqTV.delegate = self
+        faqTV.dataSource = self
+        loadData()
+        self.faqTV.reloadData()
+        
     }
     
-    fileprivate func setupTableView(){
-        view.addSubview(tableView)
-        tableView.topAnchor.constraint(equalTo: view.topAnchor,  constant: 120).isActive = true
-        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor,  constant: 20).isActive = true
-        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor,  constant: -20).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor,  constant: -50).isActive = true
-        
-        tableView.register(FaqCell.self, forCellReuseIdentifier: "cell")
-         tableView.delegate = self
-         tableView.dataSource = self
-    }
    
-  let data = [  MCDropData(title: "Who is this hack for?", url: "We encourage and welcome undergraduate students of all backgrounds to join us."), MCDropData(title: "What if I don’t know how to code?", url: "Interest in learning and working with technology is much more important than your current experience level. No experience is needed — you will be able to work with various mentors, interact with companies, and learn alongside fellow participants."), MCDropData(title: "What if I don't have a team?", url: "You can register individually and approach other teams if you would like to collaborate. You can also approach other individuals to form a team."),
-  MCDropData(title: "Where is this?", url: "This is an online hackathon, so you can participate from anywhere."),MCDropData(title: "When do applications open?", url: "The registrations will open soon, stay tuned!"),MCDropData(title: "What should I bring?", url: "You just need a laptop and a good internet connection."), MCDropData(title: "How much does this cost?", url: "Absolutely nothing! This is a free hackathon."),
-  MCDropData(title: "When do applications open?", url: "The registrations will open soon, stay tuned!"),MCDropData(title: "What should I bring?", url: "You just need a laptop and a good internet connection."), MCDropData(title: "How much does this cost?", url: "Absolutely nothing! This is a free hackathon.")]
+    func loadData() {
+        ref = Database.database().reference().child("FAQ")
+                ref?.observe(DataEventType.value, with: {
+                    (snapshot) in
+                    self.faqs = [ ]
+                  //  self.activityIndicatorView.stopAnimating()
+                    if(snapshot.childrenCount>0){
+                      //  print("\n",EventDate,"\n",snapshot);
+//                        self.timelineList.removeAll()
+//
+//
+                        for cellContents in snapshot.children.allObjects as!  [DataSnapshot]
+                        {
+                            let cellObject = cellContents.value as? [String: AnyObject]
+                            
+//                            let cellName = cellObject?["name"]
+//                            let cellTime = cellObject?["time"]
+//                            let cellImage = cellObject?["image"]
+//
+                            let item = faqModel(Answer: cellObject?["Answer"] as! String? ?? "Failed to load answer", Question: cellObject?["Question"] as! String? ?? "Failed to load question", isOpen: cellObject?["isOpen"] as! String? ?? "False")
+                          
+                            self.faqs.append(item)
+                            self.faqTV.reloadData()
+                            print("\n",self.faqs)
+                        }
+                      //  self.tableView.reloadData()
+//
+                        //Mark: - Offline functionalities
+                        self.ref?.keepSynced(true)
+                    }
+                })
+    }
 
 }
 
-var selectedIndex: IndexPath = IndexPath(row: 0, section: 0)
 
-struct MCDropData {
-    var title: String
-    var url: String
-}
 
 extension FaqViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if selectedIndex == indexPath { return 200 }
-        return 60
+        if indexPath.row == 0{
+            return 70
+        }
+        else{
+            return 100
+        }
     }
-    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return faqs.count
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        if faqs[section].isOpen == "True" {
+           return 2
+        }
+        else{
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FaqCell
-        cell.data = data[indexPath.row]
-        cell.selectionStyle = .none
-        cell.animate()
-        cell.backgroundColor = .clear
-        cell.backgroundView = UIView()
-        cell.selectedBackgroundView = UIView()
-        //cell.backgroundColor?.withAlphaComponent(0.5)
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedIndex = indexPath
         
-        tableView.beginUpdates()
-        tableView.reloadRows(at: [selectedIndex], with: .none)
-        tableView.endUpdates()
+        if indexPath.row == 0{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "title", for: indexPath) as! FaqTableViewCell
+            cell.question.text = faqs[indexPath.section].Question
+            cell.layer.backgroundColor = #colorLiteral(red: 0.2431372549, green: 0.2431372549, blue: 0.2431372549, alpha: 0.64)
+            cell.question.textColor = UIColor.dayLabelColour
+           // cell.layer.cornerRadius = 16
+           // cell.clipsToBounds = true
+            
+            
+            return cell
+        }
+        else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FaqAnswerTableViewCell
+            
+            cell.answer.text = faqs[indexPath.section].Answer
+            cell.answer.textColor = UIColor.dayLabelColour
+            cell.layer.backgroundColor = #colorLiteral(red: 0.2431372549, green: 0.2431372549, blue: 0.2431372549, alpha: 0.64)
+            //cell.layer.cornerRadius = 16
+            //cell.clipsToBounds = true
+            return cell
+        }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if faqs[indexPath.section].isOpen == "True" {
+            faqs[indexPath.section].isOpen = "False"
+            let section = IndexSet.init(integer: indexPath.section)
+            faqTV.reloadSections(section, with: .none)
+            
+        }
+        else{
+            faqs[indexPath.section].isOpen = "True"
+            let section = IndexSet.init(integer: indexPath.section)
+            faqTV.reloadSections(section, with: .none)
+        }
     }
     
     
 }
+    
+    
+

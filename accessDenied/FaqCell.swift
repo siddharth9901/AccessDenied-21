@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FaqCell: UITableViewCell {
+/*class FaqCell: UITableViewCell {
     
     var data: MCDropData? {
         didSet{
@@ -96,4 +96,4 @@ class FaqCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-}
+}*/

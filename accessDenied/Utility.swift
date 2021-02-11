@@ -20,4 +20,5 @@ extension UIColor{
     static let hoursLabelColour = #colorLiteral(red: 0.7294117647, green: 0.2784313725, blue: 0.737254902, alpha: 1)
     static let minutesLabelColour = #colorLiteral(red: 0.6117647059, green: 0.2980392157, blue: 0.7764705882, alpha: 1)
     static let secondsLabelColour = #colorLiteral(red: 0.5333333333, green: 0.3215686275, blue: 0.7960784314, alpha: 1)
+    static let faqCellBg = #colorLiteral(red: 0.2431372549, green: 0.2431372549, blue: 0.2431372549, alpha: 0.6397153253)
 }
