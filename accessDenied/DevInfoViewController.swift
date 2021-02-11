@@ -20,9 +20,12 @@ class DevInfoViewController: UIViewController {
         let GitUrl: String// Url to github profile
     }
     
-    let developers: [Devloper] = [Devloper(name: "Siddharth Dinkar", dp: UIImage(named: "sidDP")!, skill: "iOS Developer", skillIcon: UIImage(named: "X_CODE")!, linkedInUrl: "https://www.linkedin.com/in/siddharth-dinkar-3896b81b4/?originalSubdomain=in", GitUrl: "https://github.com/siddharth9901"),Devloper(name: "Riddhi Gupta", dp:  UIImage(named: "riddhiDP")!, skill: "iOS Developer", skillIcon: UIImage(named: "X_CODE")!, linkedInUrl: "https://www.linkedin.com/in/riddhi-gupta-95858b1b3/?originalSubdomain=in", GitUrl: "https://github.com/riddhi-30"),Devloper(name: "AishaanDatt", dp:  UIImage(named: "sidDP")!, skill: "UI/UX Designer", skillIcon: UIImage(named: "ADOBE_XD")!, linkedInUrl: "https://www.linkedin.com/in/aishaan-datt-b89208190/?originalSubdomain=in", GitUrl: "https://github.com/aishaandatt")]
+    let developers: [Devloper] = [Devloper(name: "Siddharth Dinkar", dp: UIImage(named: "sidDP")!, skill: "iOS Developer", skillIcon: UIImage(named: "X_CODE")!, linkedInUrl: "https://www.linkedin.com/in/siddharth-dinkar-3896b81b4/?originalSubdomain=in", GitUrl: "https://github.com/siddharth9901"),Devloper(name: "Riddhi Gupta", dp:  UIImage(named: "riddhiDP")!, skill: "iOS Developer", skillIcon: UIImage(named: "X_CODE")!, linkedInUrl: "https://www.linkedin.com/in/riddhi-gupta-95858b1b3/?originalSubdomain=in", GitUrl: "https://github.com/riddhi-30"),    Devloper(name: "Rohan Mittal", dp:  UIImage(named: "rohanDP")!, skill: "iOS Developer", skillIcon: UIImage(named: "X_CODE")!, linkedInUrl: "https://www.linkedin.com/in/rohan-mittal-1b502617b/", GitUrl: "https://github.com/rohanmittal01"),
+                              
+                                  Devloper(name: "Sanchit Gupta", dp:  UIImage(named: "sanchitDP")!, skill: "Android Developer", skillIcon: UIImage(named: "ANDROID_STUDIO")!, linkedInUrl: "https://www.linkedin.com/in/sanchit-gupta-258a7319b/", GitUrl: "https://github.com/sanchitg1296"),
+                                  Devloper(name: "AishaanDatt", dp:  UIImage(named: "aishanDP")!, skill: "UI/UX Designer", skillIcon: UIImage(named: "ADOBE_XD")!, linkedInUrl: "https://www.linkedin.com/in/aishaan-datt-b89208190/?originalSubdomain=in", GitUrl: "https://github.com/aishaandatt")]
     
-    let cellSpacingHeight: CGFloat = 44//;;;;
+    let cellSpacingHeight: CGFloat = 20//;;;;
 
     override func viewDidLoad() {
         super.viewDidLoad()

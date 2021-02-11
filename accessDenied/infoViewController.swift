@@ -136,7 +136,7 @@ extension infoViewController: UITableViewDelegate, UITableViewDataSource {
 extension infoViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = CGSize(width: 190, height: 190)
+        let size = CGSize(width: 140, height: 140)
         return size
     }
    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
