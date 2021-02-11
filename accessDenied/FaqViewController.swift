@@ -24,7 +24,7 @@ class FaqViewController: UIViewController {
     var ref: DatabaseReference!
     var databaseHandle: DatabaseHandle?
     var faqs: [faqModel] = [faqModel(Answer: "Unavailable", Question: "Unavailable" , isOpen: "False")]
-
+    let cellSpacingHeight: CGFloat = 20//;;;;
     override func viewDidLoad() {
         super.viewDidLoad()
         self.activityIndicatorView = ActivityIndicatorView(title: "Loading...", center: self.view.center)
@@ -101,6 +101,16 @@ extension FaqViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+            return cellSpacingHeight
+        }//;;;
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+            let headerView = UIView()
+            headerView.backgroundColor = UIColor.clear
+            return headerView
+        }//;;;
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0{
@@ -108,7 +118,7 @@ extension FaqViewController: UITableViewDelegate, UITableViewDataSource {
             cell.question.text = faqs[indexPath.section].Question
             cell.layer.backgroundColor = #colorLiteral(red: 0.2431372549, green: 0.2431372549, blue: 0.2431372549, alpha: 0.64)
             cell.question.textColor = UIColor.dayLabelColour
-           // cell.layer.cornerRadius = 16
+           //cell.layer.cornerRadius = 16
            // cell.clipsToBounds = true
             
             
@@ -120,7 +130,7 @@ extension FaqViewController: UITableViewDelegate, UITableViewDataSource {
             cell.answer.text = faqs[indexPath.section].Answer
             cell.answer.textColor = UIColor.dayLabelColour
             cell.layer.backgroundColor = #colorLiteral(red: 0.2431372549, green: 0.2431372549, blue: 0.2431372549, alpha: 0.64)
-            //cell.layer.cornerRadius = 16
+           //cell.layer.cornerRadius = 16
             //cell.clipsToBounds = true
             return cell
         }
