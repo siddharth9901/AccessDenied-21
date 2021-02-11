@@ -13,7 +13,22 @@ class speakerMainTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var designationLabel: UILabel!
     @IBOutlet weak var speakerImage: UIImageView!
+    @IBOutlet weak var buttonTapped: UIButton!
     
+    var sectionIsExpanded = String()  {
+        didSet {
+            UIView.animate(withDuration: 0.5) {
+                if self.sectionIsExpanded == "True"{
+                    self.buttonTapped.imageView?.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2.0)
+                    
+                } else {
+                    
+                    self.buttonTapped.imageView?.transform = CGAffineTransform.identity
+                }
+            }
+        }
+    }
+    var tapCallback: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,6 +37,9 @@ class speakerMainTableViewCell: UITableViewCell {
         // Initialization code
     }
 
+    @IBAction func buttonTapped(_ sender: Any) {
+        tapCallback?()
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

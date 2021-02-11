@@ -46,6 +46,11 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
+		<key>IQKeyboardManagerSwift.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>14</integer>
+		</dict>
 		<key>Pods-accessDenied-accessDeniedUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>

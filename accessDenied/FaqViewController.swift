@@ -21,10 +21,12 @@ class FaqViewController: UIViewController {
     
     var activityIndicatorView: ActivityIndicatorView!
     @IBOutlet weak var faqTV: UITableView!
+    @IBOutlet weak var buttonTapped: UIButton!
     var ref: DatabaseReference!
     var databaseHandle: DatabaseHandle?
     var faqs: [faqModel] = [faqModel(Answer: "Unavailable", Question: "Unavailable" , isOpen: "False")]
 
+    let cellSpacingHeight: CGFloat = 20
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,6 +46,8 @@ class FaqViewController: UIViewController {
         }
     }
    
+  
+    
     func loadData() {
         ref = Database.database().reference().child("FAQ")
                 ref?.observe(DataEventType.value, with: {
@@ -77,7 +81,7 @@ extension FaqViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0{
-            return 70
+            return 90
         }
         else{
             return 100
@@ -94,7 +98,15 @@ extension FaqViewController: UITableViewDelegate, UITableViewDataSource {
             return 1
         }
     }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+            return cellSpacingHeight
+        }//;;;
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+            let headerView = UIView()
+            headerView.backgroundColor = UIColor.clear
+            return headerView
+        }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0{
@@ -102,6 +114,10 @@ extension FaqViewController: UITableViewDelegate, UITableViewDataSource {
             cell.question.text = faqs[indexPath.section].Question
             cell.layer.backgroundColor = #colorLiteral(red: 0.2431372549, green: 0.2431372549, blue: 0.2431372549, alpha: 0.64)
             cell.question.textColor = UIColor.dayLabelColour
+            cell.sectionIsExpanded = faqs[indexPath.section].isOpen
+            cell.tapCallback = {
+                self.rowAnimate(indexPath: indexPath)
+            }
            // cell.layer.cornerRadius = 16
            // cell.clipsToBounds = true
             
@@ -120,19 +136,23 @@ extension FaqViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        rowAnimate(indexPath: indexPath)
+    }
+    func rowAnimate(indexPath: IndexPath) {
         if faqs[indexPath.section].isOpen == "True" {
             faqs[indexPath.section].isOpen = "False"
             let section = IndexSet.init(integer: indexPath.section)
             faqTV.reloadSections(section, with: .none)
+            
             
         }
         else{
             faqs[indexPath.section].isOpen = "True"
             let section = IndexSet.init(integer: indexPath.section)
             faqTV.reloadSections(section, with: .none)
+            
         }
     }
-    
     
 }
     

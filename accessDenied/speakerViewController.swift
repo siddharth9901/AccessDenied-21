@@ -121,6 +121,10 @@ extension speakerViewController: UITableViewDelegate, UITableViewDataSource{
             let cell = tableView.dequeueReusableCell(withIdentifier: "title", for: indexPath) as! speakerMainTableViewCell
             cell.nameLabel.text = speakers[indexPath.section].name
             cell.designationLabel.text = speakers[indexPath.section].designation
+            cell.sectionIsExpanded = speakers[indexPath.section].isOpen
+            cell.tapCallback = {
+                self.rowAnimate(indexPath: indexPath)
+            }
             cell.speakerImage?.sd_setImage(with: URL(string: speakers[indexPath.section].image))
             
             return cell
@@ -137,6 +141,9 @@ extension speakerViewController: UITableViewDelegate, UITableViewDataSource{
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        rowAnimate(indexPath: indexPath)
+    }
+    func rowAnimate( indexPath: IndexPath) {
         if speakers[indexPath.section].isOpen == "True" {
             speakers[indexPath.section].isOpen = "False"
             let section = IndexSet.init(integer: indexPath.section)
