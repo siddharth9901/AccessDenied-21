@@ -128,7 +128,7 @@ extension FaqViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FaqAnswerTableViewCell
             
             cell.answer.text = faqs[indexPath.section].Answer
-            cell.answer.textColor = UIColor.dayLabelColour
+           // cell.answer.textColor = UIColor.dayLabelColour
             cell.layer.backgroundColor = #colorLiteral(red: 0.2431372549, green: 0.2431372549, blue: 0.2431372549, alpha: 0.64)
             //cell.layer.cornerRadius = 16
             //cell.clipsToBounds = true
