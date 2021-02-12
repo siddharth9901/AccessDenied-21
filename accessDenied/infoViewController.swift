@@ -29,15 +29,16 @@ class infoViewController: UIViewController {
     
     var infoCells: [infoTopics] = [infoTopics(title: "About Access Denied", details: "Access Denied is a 36-hour hackathon organized by IETE-ISF for innovators across the country. It is an great opportunity to put your technical skills to use. Apply your textbook knowledge to real life ideas and stand a chance to win exclusive goodies, schwags, certificates and cash prizes upto Rs. 90,000. Mark your calendars for 19th to 21st March 2021.", image: UIImage(named: "Hackathon Logo")!),
                                    infoTopics(title: "About IETE", details: "The Institution of Electronics and Telecommunication Engineers (IETE) is India’s leading recognized professional society devoted to the advancement of Science and Technology of Electronics, Telecommunication and IT. Government of India has recognized IETE as a Scientific and Industrial Research Organization (SIRO) and also notified as an educational Institution of national eminence. The objectives of IETE focus on advancing electro-technology. The IETE conducts and partners technical meetings, conferences, symposia, and exhibitions all over India, publishes technical journals and providescontinuing education as well as career advancement opportunities to its members.", image: UIImage(named: "IETE WHITE")!),
-                                   infoTopics(title: "Developer Info", details: " ", image: UIImage(named: "Hackathon Logo")!), infoTopics(title: "Contact Us", details: " ")]
+                                   infoTopics(title: "Developer Info", details: " ", image: UIImage(named: "Hackathon Logo")!), infoTopics(title: "Contact Us", details: " "),
+                                   infoTopics(title: "Tracks", details: "")]
 
-    var sponsors : [sponsorModel] = []
+ //   var sponsors : [sponsorModel] = []
     
     //var sponsors
     
     
     @IBOutlet weak var infoTV: UITableView!
-    @IBOutlet weak var sponsorsCV: UICollectionView!
+
     
     var ref: DatabaseReference!
        var databaseHandle: DatabaseHandle?
@@ -49,20 +50,18 @@ class infoViewController: UIViewController {
         infoTV.delegate = self
         infoTV.dataSource = self
         infoTV.reloadData()
-        if(self.checkForInternetConnection() == true){
-            self.activityIndicatorView = ActivityIndicatorView(title: "Loading...", center: self.view.center)
-                self.view.addSubview(self.activityIndicatorView.getViewActivityIndicator())
+       // if(self.checkForInternetConnection() == true){
+         //   self.activityIndicatorView = ActivityIndicatorView(title: "Loading...", center: self.view.center)
+           //     self.view.addSubview(self.activityIndicatorView.getViewActivityIndicator())
             
-            activityIndicatorView.startAnimating()
-            loadData()
+            //activityIndicatorView.startAnimating()
+          //  loadData()
         }
-        self.sponsorsCV.reloadData()
-        sponsorsCV.delegate = self
-        sponsorsCV.dataSource = self
+
         //sponsorsCV.delegate = self
         //sponsorsCV.dataSource = self
         // Do any additional setup after loading the view.
-    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "info"{
             let vc = segue.destination as! detailViewController
@@ -71,7 +70,7 @@ class infoViewController: UIViewController {
         }
     }
     
-    func loadData() {
+   /* func loadData() {
             ref = Database.database().reference().child("Sponsors")
                     ref?.observe(DataEventType.value, with: {
                         (snapshot) in
@@ -97,7 +96,7 @@ class infoViewController: UIViewController {
                             self.ref?.keepSynced(true)
                         }
                     })
-        }
+        }*/
     
 
     
@@ -124,6 +123,9 @@ extension infoViewController: UITableViewDelegate, UITableViewDataSource {
         else if infoCells[indexPath.row].title == "Contact Us"{
             self.performSegue(withIdentifier: "contactUs", sender: self)
         }
+        else if infoCells[indexPath.row].title == "Tracks" {
+            self.performSegue(withIdentifier: "tracks", sender: self)
+        }
         else{
             self.infoText = infoCells[indexPath.row].details
             self.image = infoCells[indexPath.row].image
@@ -133,7 +135,7 @@ extension infoViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-extension infoViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+/*extension infoViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = CGSize(width: 140, height: 140)
@@ -157,7 +159,7 @@ extension infoViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     
-}
+}*/
 
 //extension infoViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
  /*   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

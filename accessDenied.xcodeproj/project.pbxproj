@@ -40,6 +40,8 @@
 		FDDBD79625C7A25500111DFB /* accessDeniedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBD79525C7A25500111DFB /* accessDeniedTests.swift */; };
 		FDDBD7A125C7A25500111DFB /* accessDeniedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBD7A025C7A25500111DFB /* accessDeniedUITests.swift */; };
 		FDDBD7C125C7FD6B00111DFB /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBD7C025C7FD6B00111DFB /* Utility.swift */; };
+		FDFA251425D68C7F00ECA14E /* TracksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFA251325D68C7F00ECA14E /* TracksTableViewCell.swift */; };
+		FDFA251925D68C9D00ECA14E /* TracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFA251825D68C9D00ECA14E /* TracksViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +108,8 @@
 		FDDBD7A025C7A25500111DFB /* accessDeniedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accessDeniedUITests.swift; sourceTree = "<group>"; };
 		FDDBD7A225C7A25500111DFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDDBD7C025C7FD6B00111DFB /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		FDFA251325D68C7F00ECA14E /* TracksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksTableViewCell.swift; sourceTree = "<group>"; };
+		FDFA251825D68C9D00ECA14E /* TracksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +212,8 @@
 				AF21BCEE25D3376F009CF417 /* sponsorsCollectionViewCell.swift */,
 				AF21BCE925D32F66009CF417 /* detailViewController.swift */,
 				FDDBD78425C7A25000111DFB /* Main.storyboard */,
+				FDFA251325D68C7F00ECA14E /* TracksTableViewCell.swift */,
+				FDFA251825D68C9D00ECA14E /* TracksViewController.swift */,
 				FD596DFF25D4649200595B0A /* FaqAnswerTableViewCell.swift */,
 				17A8138725D4084200801887 /* Assets.xcassets */,
 				AF21BD0725D34F7E009CF417 /* BebasNeue-Regular.ttf */,
@@ -489,6 +495,7 @@
 				AF21BCEA25D32F66009CF417 /* detailViewController.swift in Sources */,
 				FDDBD7C125C7FD6B00111DFB /* Utility.swift in Sources */,
 				FDDBD78325C7A25000111DFB /* ViewController.swift in Sources */,
+				FDFA251925D68C9D00ECA14E /* TracksViewController.swift in Sources */,
 				AF21BCF925D342AE009CF417 /* speakerMainTableViewCell.swift in Sources */,
 				1782037025D3EF8400EC8BB7 /* TimelineViewController.swift in Sources */,
 				17A8138025D4055400801887 /* ActivityViewIndicator.swift in Sources */,
@@ -497,6 +504,7 @@
 				1741C19C25C9C52800DFBDF9 /* FaqViewController.swift in Sources */,
 				1741C1A225C9CAA000DFBDF9 /* FaqCell.swift in Sources */,
 				FDDBD78125C7A25000111DFB /* SceneDelegate.swift in Sources */,
+				FDFA251425D68C7F00ECA14E /* TracksTableViewCell.swift in Sources */,
 				FD596DFB25D45FC500595B0A /* FaqTableViewCell.swift in Sources */,
 				177DFB4C25CAB87C00B20A21 /* DevCell.swift in Sources */,
 			);
