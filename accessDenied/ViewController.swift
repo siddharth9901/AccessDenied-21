@@ -10,6 +10,7 @@ import FirebaseDatabase
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var status: UILabel!
     @IBOutlet weak var days: UILabel!
     @IBOutlet weak var hours: UILabel!
     @IBOutlet weak var seconds: UILabel!
@@ -93,13 +94,24 @@ class ViewController: UIViewController {
     self.internetAlert(message: "We are unable to contact the servers due to absence of Internet Connection.")
 }
     }
-    let futureDate: Date = {
+    var futureDate: Date = {
             var future = DateComponents(
                 year: 2021,
-                month: 3,
-                day: 19,
+                month: 2,
+                day: 13,
                 hour: 0,
-                minute: 0,
+                minute: 20,
+                second: 0
+            )
+            return Calendar.current.date(from: future)!
+        }()
+    let endDate: Date = {
+            var future = DateComponents(
+                year: 2021,
+                month: 2,
+                day: 13,
+                hour: 0,
+                minute: 21,
                 second: 0
             )
             return Calendar.current.date(from: future)!
@@ -120,10 +132,34 @@ class ViewController: UIViewController {
             minutes.text = String(format: "%02d",minute)
             seconds.text = String(format: "%02d",second)
             
+            var didEnd = second == 0 && minute == 0 && day == 0 && hour == 0
+            
+            if (status.text == "Hack starts in") {
+                if didEnd {
+                    status.text = "HACK ENDS IN"
+                    futureDate = endDate
+                    runCountdown()
+                    
+                }
+            }
+            else if status.text == "HACK ENDS IN" {
+                if didEnd {
+                    status.text = " See you next time"
+                    days.text = "00"
+                    hours.text = "00"
+                    minutes.text = "00"
+                    seconds.text = "00"
+                    fireTimer?.invalidate()
+                    fireTimer = nil
+                    
+                    
+                }
+            }
+            
         }
-
+    var fireTimer: Timer? = nil
         func runCountdown() {
-            Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+            fireTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
  
         }
     
