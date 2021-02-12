@@ -11,7 +11,6 @@ target 'accessDenied' do
     pod 'Toaster'
     pod 'IQKeyboardManagerSwift'
 
-
   target 'accessDeniedTests' do
     inherit! :search_paths
     # Pods for testing

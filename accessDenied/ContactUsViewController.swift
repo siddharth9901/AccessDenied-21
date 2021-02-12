@@ -11,20 +11,34 @@ import SafariServices
 
 class ContactUsViewController: UIViewController, UITextViewDelegate {
 
+  
+    
     
     @IBOutlet weak var name: UITextField!
+    
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var phno: UITextField!
+    
+    
     @IBOutlet weak var msg: UITextView!
+    
     @IBOutlet weak var submit: UIButton!
     
-    
     @IBOutlet weak var call: UIButton!
+    
     @IBOutlet weak var website: UIButton!
     @IBOutlet weak var mail: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let imageName = "65-1.png"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        imageView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        imageView.contentMode = .scaleAspectFill
+        view.addSubview(imageView)
+        self.view.sendSubviewToBack(imageView)
+        
         name.layer.cornerRadius = 15
         name.layer.masksToBounds = true
         name.layer.borderColor = CGColor(red: 213/255, green: 45/255, blue: 134/255, alpha: 1)
@@ -60,7 +74,6 @@ class ContactUsViewController: UIViewController, UITextViewDelegate {
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        print("Begin Editing")
         if textView.textColor == UIColor(red: 185/255, green: 185/255, blue: 185/255, alpha: 1) {
             textView.text = nil
             textView.textColor = UIColor.white
@@ -79,7 +92,6 @@ class ContactUsViewController: UIViewController, UITextViewDelegate {
     }
     
     func isValidEmail(testStr:String) -> Bool {
-             print("validate emilId: \(testStr)")
              let emailRegEx = "^(?:(?:(?:(?: )*(?:(?:(?:\\t| )*\\r\\n)?(?:\\t| )+))+(?: )*)|(?: )+)?(?:(?:(?:[-A-Za-z0-9!#$%&’*+/=?^_'{|}~]+(?:\\.[-A-Za-z0-9!#$%&’*+/=?^_'{|}~]+)*)|(?:\"(?:(?:(?:(?: )*(?:(?:[!#-Z^-~]|\\[|\\])|(?:\\\\(?:\\t|[ -~]))))+(?: )*)|(?: )+)\"))(?:@)(?:(?:(?:[A-Za-z0-9](?:[-A-Za-z0-9]{0,61}[A-Za-z0-9])?)(?:\\.[A-Za-z0-9](?:[-A-Za-z0-9]{0,61}[A-Za-z0-9])?)*)|(?:\\[(?:(?:(?:(?:(?:[0-9]|(?:[1-9][0-9])|(?:1[0-9][0-9])|(?:2[0-4][0-9])|(?:25[0-5]))\\.){3}(?:[0-9]|(?:[1-9][0-9])|(?:1[0-9][0-9])|(?:2[0-4][0-9])|(?:25[0-5]))))|(?:(?:(?: )*[!-Z^-~])*(?: )*)|(?:[Vv][0-9A-Fa-f]+\\.[-A-Za-z0-9._~!$&'()*+,;=:]+))\\])))(?:(?:(?:(?: )*(?:(?:(?:\\t| )*\\r\\n)?(?:\\t| )+))+(?: )*)|(?: )+)?$"
              let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         let result = emailTest.evaluate(with: testStr)
@@ -95,14 +107,13 @@ class ContactUsViewController: UIViewController, UITextViewDelegate {
             return false
         }
     }
-    
-    
+   
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func submitButtonPressed(_ sender: Any) {
-        print("submit")
+   
+    @IBAction func submitBtn(_ sender: Any) {
         removeWhitespaces(field: name)
         removeWhitespaces(field: email)
         removeWhitespaces(field: phno)
@@ -125,19 +136,19 @@ class ContactUsViewController: UIViewController, UITextViewDelegate {
         }
     }
     
-    @IBAction func phoneBtnPressed(_ sender: Any) {
+    @IBAction func phonebtn(_ sender: Any) {
         if let url = URL(string: "tel://8754583601"),
         UIApplication.shared.canOpenURL(url) {
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
     
-    
-    @IBAction func websiteBtnPressed(_ sender: Any) {
-       website(link: "https://www.ietevit.com/accessdenied")
+    @IBAction func websiteBtn(_ sender: Any) {
+        self.website(link: "https://www.ietevit.com/accessdenied")
     }
     
-    @IBAction func mailBtnPressed(_ sender: Any) {
+    
+    @IBAction func mailBtn(_ sender: Any) {
         mail(link: "iete@vit.ac.in")
     }
     
@@ -169,15 +180,7 @@ class ContactUsViewController: UIViewController, UITextViewDelegate {
         }
     }
     
-    func website(link: String){
-        
-        guard let url = URL(string: link) else {
-                              return
-        }
-        let safariVC = SFSafariViewController(url: url)
-        present(safariVC, animated: true, completion: nil)
-    }
-    
+ 
     /*
     // MARK: - Navigation
 

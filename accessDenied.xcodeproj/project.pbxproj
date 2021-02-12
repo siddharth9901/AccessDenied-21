@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1741C19C25C9C52800DFBDF9 /* FaqViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1741C19B25C9C52800DFBDF9 /* FaqViewController.swift */; };
+		1713CF4625D5767C009A56C4 /* SponsorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1713CF4525D5767C009A56C4 /* SponsorsViewController.swift */; };
 		1741C1A225C9CAA000DFBDF9 /* FaqCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1741C1A025C9CAA000DFBDF9 /* FaqCell.swift */; };
 		177DFB4625CAB6D600B20A21 /* DevInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177DFB4525CAB6D600B20A21 /* DevInfoViewController.swift */; };
 		177DFB4C25CAB87C00B20A21 /* DevCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177DFB4A25CAB87C00B20A21 /* DevCell.swift */; };
@@ -17,6 +17,11 @@
 		178D239C25D3F7DA007459A7 /* TimelineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 178D239A25D3F7DA007459A7 /* TimelineCell.xib */; };
 		17A8138025D4055400801887 /* ActivityViewIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A8137F25D4055300801887 /* ActivityViewIndicator.swift */; };
 		17A8138825D4084200801887 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17A8138725D4084200801887 /* Assets.xcassets */; };
+		17B81EEE25D5878A00F0BC02 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 17B81EED25D5878A00F0BC02 /* GoogleService-Info.plist */; };
+		1C434AD425D7074C00663123 /* TracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C434AD225D7074B00663123 /* TracksViewController.swift */; };
+		1C434AD525D7074C00663123 /* TracksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C434AD325D7074B00663123 /* TracksTableViewCell.swift */; };
+		1C434AE225D70E4800663123 /* FaqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C434AE025D70E4800663123 /* FaqTableViewCell.swift */; };
+		1C434AE325D70E4800663123 /* FaqViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C434AE125D70E4800663123 /* FaqViewController.swift */; };
 		5CA8DE3E46512FA0A97D9A1D /* Pods_accessDenied.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C2771F16C3F5997F55C1F07 /* Pods_accessDenied.framework */; };
 		A2AA69E6DE41FFC62CA47E3C /* Pods_accessDeniedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED1172FF754C4C70CC0E192 /* Pods_accessDeniedTests.framework */; };
 		AD846B2E53B84AA06F77F073 /* Pods_accessDenied_accessDeniedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 115E85E42D818171D598876B /* Pods_accessDenied_accessDeniedUITests.framework */; };
@@ -27,15 +32,16 @@
 		AF21BCF425D34299009CF417 /* speakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21BCF325D34299009CF417 /* speakerViewController.swift */; };
 		AF21BCF925D342AE009CF417 /* speakerMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21BCF825D342AE009CF417 /* speakerMainTableViewCell.swift */; };
 		AF21BCFE25D342C6009CF417 /* speakerInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21BCFD25D342C6009CF417 /* speakerInfoTableViewCell.swift */; };
-		AF21BD0325D34A87009CF417 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21BD0225D34A87009CF417 /* Model.swift */; };
-		BA9DE95F25D44F8700EF25F5 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9DE95E25D44F8700EF25F5 /* ContactUsViewController.swift */; };
-		FD2320BE25D3BEFA001414C2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD2320BD25D3BEFA001414C2 /* GoogleService-Info.plist */; };
+		BABEDC5F25D4FE9700892F60 /* checkInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABEDC5E25D4FE9700892F60 /* checkInternet.swift */; };
+		FD596E0025D4649200595B0A /* FaqAnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD596DFF25D4649200595B0A /* FaqAnswerTableViewCell.swift */; };
+		FD596E5925D4775000595B0A /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD596E5825D4775000595B0A /* ContactUsViewController.swift */; };
 		FDDBD77F25C7A25000111DFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBD77E25C7A25000111DFB /* AppDelegate.swift */; };
 		FDDBD78125C7A25000111DFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBD78025C7A25000111DFB /* SceneDelegate.swift */; };
 		FDDBD78325C7A25000111DFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBD78225C7A25000111DFB /* ViewController.swift */; };
 		FDDBD78625C7A25000111DFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDDBD78425C7A25000111DFB /* Main.storyboard */; };
 		FDDBD78B25C7A25400111DFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDDBD78925C7A25400111DFB /* LaunchScreen.storyboard */; };
 		FDDBD79625C7A25500111DFB /* accessDeniedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBD79525C7A25500111DFB /* accessDeniedTests.swift */; };
+		FDDBD7A125C7A25500111DFB /* accessDeniedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBD7A025C7A25500111DFB /* accessDeniedUITests.swift */; };
 		FDDBD7C125C7FD6B00111DFB /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBD7C025C7FD6B00111DFB /* Utility.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,7 +64,7 @@
 
 /* Begin PBXFileReference section */
 		115E85E42D818171D598876B /* Pods_accessDenied_accessDeniedUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_accessDenied_accessDeniedUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1741C19B25C9C52800DFBDF9 /* FaqViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqViewController.swift; sourceTree = "<group>"; };
+		1713CF4525D5767C009A56C4 /* SponsorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorsViewController.swift; sourceTree = "<group>"; };
 		1741C1A025C9CAA000DFBDF9 /* FaqCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqCell.swift; sourceTree = "<group>"; };
 		177DFB4525CAB6D600B20A21 /* DevInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevInfoViewController.swift; sourceTree = "<group>"; };
 		177DFB4A25CAB87C00B20A21 /* DevCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevCell.swift; sourceTree = "<group>"; };
@@ -68,6 +74,11 @@
 		178D239A25D3F7DA007459A7 /* TimelineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineCell.xib; sourceTree = "<group>"; };
 		17A8137F25D4055300801887 /* ActivityViewIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewIndicator.swift; sourceTree = "<group>"; };
 		17A8138725D4084200801887 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		17B81EED25D5878A00F0BC02 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1C434AD225D7074B00663123 /* TracksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksViewController.swift; sourceTree = "<group>"; };
+		1C434AD325D7074B00663123 /* TracksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksTableViewCell.swift; sourceTree = "<group>"; };
+		1C434AE025D70E4800663123 /* FaqTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqTableViewCell.swift; sourceTree = "<group>"; };
+		1C434AE125D70E4800663123 /* FaqViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqViewController.swift; sourceTree = "<group>"; };
 		3C2771F16C3F5997F55C1F07 /* Pods_accessDenied.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_accessDenied.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74AD6DC9E401357895EAA865 /* Pods-accessDeniedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-accessDeniedTests.debug.xcconfig"; path = "Target Support Files/Pods-accessDeniedTests/Pods-accessDeniedTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9AF3A32DCF65A170A13AC0AB /* Pods-accessDenied-accessDeniedUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-accessDenied-accessDeniedUITests.release.xcconfig"; path = "Target Support Files/Pods-accessDenied-accessDeniedUITests/Pods-accessDenied-accessDeniedUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -79,14 +90,14 @@
 		AF21BCF325D34299009CF417 /* speakerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = speakerViewController.swift; sourceTree = "<group>"; };
 		AF21BCF825D342AE009CF417 /* speakerMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = speakerMainTableViewCell.swift; sourceTree = "<group>"; };
 		AF21BCFD25D342C6009CF417 /* speakerInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = speakerInfoTableViewCell.swift; sourceTree = "<group>"; };
-		AF21BD0225D34A87009CF417 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		AF21BD0725D34F7E009CF417 /* BebasNeue-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Regular.ttf"; sourceTree = "<group>"; };
-		BA9DE95E25D44F8700EF25F5 /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
+		BABEDC5E25D4FE9700892F60 /* checkInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkInternet.swift; sourceTree = "<group>"; };
 		CED1172FF754C4C70CC0E192 /* Pods_accessDeniedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_accessDeniedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E57FB910828E649B4E892AD9 /* Pods-accessDenied.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-accessDenied.release.xcconfig"; path = "Target Support Files/Pods-accessDenied/Pods-accessDenied.release.xcconfig"; sourceTree = "<group>"; };
 		F05B4E54822432FC3A7F6BCA /* Pods-accessDenied.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-accessDenied.debug.xcconfig"; path = "Target Support Files/Pods-accessDenied/Pods-accessDenied.debug.xcconfig"; sourceTree = "<group>"; };
 		F8E0F5E92EEDB799AF434724 /* Pods-accessDeniedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-accessDeniedTests.release.xcconfig"; path = "Target Support Files/Pods-accessDeniedTests/Pods-accessDeniedTests.release.xcconfig"; sourceTree = "<group>"; };
-		FD2320BD25D3BEFA001414C2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FD596DFF25D4649200595B0A /* FaqAnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqAnswerTableViewCell.swift; sourceTree = "<group>"; };
+		FD596E5825D4775000595B0A /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		FDDBD77B25C7A25000111DFB /* accessDenied.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = accessDenied.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDDBD77E25C7A25000111DFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDDBD78025C7A25000111DFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +109,8 @@
 		FDDBD79525C7A25500111DFB /* accessDeniedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accessDeniedTests.swift; sourceTree = "<group>"; };
 		FDDBD79725C7A25500111DFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDDBD79C25C7A25500111DFB /* accessDeniedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = accessDeniedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDDBD7A025C7A25500111DFB /* accessDeniedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accessDeniedUITests.swift; sourceTree = "<group>"; };
+		FDDBD7A225C7A25500111DFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDDBD7C025C7FD6B00111DFB /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +142,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C434ADC25D70E2900663123 /* FAQ */ = {
+			isa = PBXGroup;
+			children = (
+				1C434AE025D70E4800663123 /* FaqTableViewCell.swift */,
+				1C434AE125D70E4800663123 /* FaqViewController.swift */,
+			);
+			path = FAQ;
+			sourceTree = "<group>";
+		};
 		9027EC42F07814CA090F6EF1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +179,7 @@
 			children = (
 				FDDBD77D25C7A25000111DFB /* accessDenied */,
 				FDDBD79425C7A25500111DFB /* accessDeniedTests */,
+				FDDBD79F25C7A25500111DFB /* accessDeniedUITests */,
 				FDDBD77C25C7A25000111DFB /* Products */,
 				9027EC42F07814CA090F6EF1 /* Pods */,
 				F06322A3499BC4817D33C8EA /* Frameworks */,
@@ -178,20 +201,21 @@
 			children = (
 				FDDBD77E25C7A25000111DFB /* AppDelegate.swift */,
 				1741C1A025C9CAA000DFBDF9 /* FaqCell.swift */,
-				AF21BD0225D34A87009CF417 /* Model.swift */,
 				FDDBD7C025C7FD6B00111DFB /* Utility.swift */,
 				177DFB4A25CAB87C00B20A21 /* DevCell.swift */,
+				1713CF4525D5767C009A56C4 /* SponsorsViewController.swift */,
 				177DFB4B25CAB87C00B20A21 /* DevCell.xib */,
-				1741C19B25C9C52800DFBDF9 /* FaqViewController.swift */,
+				1C434ADC25D70E2900663123 /* FAQ */,
 				FDDBD78025C7A25000111DFB /* SceneDelegate.swift */,
 				177DFB4525CAB6D600B20A21 /* DevInfoViewController.swift */,
 				FDDBD78225C7A25000111DFB /* ViewController.swift */,
 				17A8137F25D4055300801887 /* ActivityViewIndicator.swift */,
 				1782036F25D3EF8400EC8BB7 /* TimelineViewController.swift */,
 				178D239925D3F7DA007459A7 /* TimelineCell.swift */,
+				BABEDC5E25D4FE9700892F60 /* checkInternet.swift */,
 				178D239A25D3F7DA007459A7 /* TimelineCell.xib */,
 				AF21BCDF25D32B83009CF417 /* infoOptionsTableViewCell.swift */,
-				BA9DE95E25D44F8700EF25F5 /* ContactUsViewController.swift */,
+				FD596E5825D4775000595B0A /* ContactUsViewController.swift */,
 				AF21BCF325D34299009CF417 /* speakerViewController.swift */,
 				AF21BCF825D342AE009CF417 /* speakerMainTableViewCell.swift */,
 				AF21BCFD25D342C6009CF417 /* speakerInfoTableViewCell.swift */,
@@ -199,10 +223,13 @@
 				AF21BCEE25D3376F009CF417 /* sponsorsCollectionViewCell.swift */,
 				AF21BCE925D32F66009CF417 /* detailViewController.swift */,
 				FDDBD78425C7A25000111DFB /* Main.storyboard */,
+				1C434AD325D7074B00663123 /* TracksTableViewCell.swift */,
+				FD596DFF25D4649200595B0A /* FaqAnswerTableViewCell.swift */,
+				1C434AD225D7074B00663123 /* TracksViewController.swift */,
 				17A8138725D4084200801887 /* Assets.xcassets */,
 				AF21BD0725D34F7E009CF417 /* BebasNeue-Regular.ttf */,
 				FDDBD78925C7A25400111DFB /* LaunchScreen.storyboard */,
-				FD2320BD25D3BEFA001414C2 /* GoogleService-Info.plist */,
+				17B81EED25D5878A00F0BC02 /* GoogleService-Info.plist */,
 				FDDBD78C25C7A25400111DFB /* Info.plist */,
 			);
 			path = accessDenied;
@@ -215,6 +242,15 @@
 				FDDBD79725C7A25500111DFB /* Info.plist */,
 			);
 			path = accessDeniedTests;
+			sourceTree = "<group>";
+		};
+		FDDBD79F25C7A25500111DFB /* accessDeniedUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FDDBD7A025C7A25500111DFB /* accessDeniedUITests.swift */,
+				FDDBD7A225C7A25500111DFB /* Info.plist */,
+			);
+			path = accessDeniedUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,7 +366,7 @@
 				FDDBD78625C7A25000111DFB /* Main.storyboard in Resources */,
 				177DFB4D25CAB87C00B20A21 /* DevCell.xib in Resources */,
 				17A8138825D4084200801887 /* Assets.xcassets in Resources */,
-				FD2320BE25D3BEFA001414C2 /* GoogleService-Info.plist in Resources */,
+				17B81EEE25D5878A00F0BC02 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,23 +494,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1713CF4625D5767C009A56C4 /* SponsorsViewController.swift in Sources */,
 				AF21BCE025D32B83009CF417 /* infoOptionsTableViewCell.swift in Sources */,
+				BABEDC5F25D4FE9700892F60 /* checkInternet.swift in Sources */,
 				177DFB4625CAB6D600B20A21 /* DevInfoViewController.swift in Sources */,
+				FD596E5925D4775000595B0A /* ContactUsViewController.swift in Sources */,
 				AF21BCFE25D342C6009CF417 /* speakerInfoTableViewCell.swift in Sources */,
 				AF21BCEF25D3376F009CF417 /* sponsorsCollectionViewCell.swift in Sources */,
 				AF21BCF425D34299009CF417 /* speakerViewController.swift in Sources */,
 				AF21BCE525D32B90009CF417 /* infoViewController.swift in Sources */,
 				178D239B25D3F7DA007459A7 /* TimelineCell.swift in Sources */,
-				BA9DE95F25D44F8700EF25F5 /* ContactUsViewController.swift in Sources */,
 				AF21BCEA25D32F66009CF417 /* detailViewController.swift in Sources */,
-				AF21BD0325D34A87009CF417 /* Model.swift in Sources */,
 				FDDBD7C125C7FD6B00111DFB /* Utility.swift in Sources */,
+				1C434AE225D70E4800663123 /* FaqTableViewCell.swift in Sources */,
+				1C434AD425D7074C00663123 /* TracksViewController.swift in Sources */,
 				FDDBD78325C7A25000111DFB /* ViewController.swift in Sources */,
 				AF21BCF925D342AE009CF417 /* speakerMainTableViewCell.swift in Sources */,
 				1782037025D3EF8400EC8BB7 /* TimelineViewController.swift in Sources */,
 				17A8138025D4055400801887 /* ActivityViewIndicator.swift in Sources */,
+				1C434AE325D70E4800663123 /* FaqViewController.swift in Sources */,
 				FDDBD77F25C7A25000111DFB /* AppDelegate.swift in Sources */,
-				1741C19C25C9C52800DFBDF9 /* FaqViewController.swift in Sources */,
+				FD596E0025D4649200595B0A /* FaqAnswerTableViewCell.swift in Sources */,
+				1C434AD525D7074C00663123 /* TracksTableViewCell.swift in Sources */,
 				1741C1A225C9CAA000DFBDF9 /* FaqCell.swift in Sources */,
 				FDDBD78125C7A25000111DFB /* SceneDelegate.swift in Sources */,
 				177DFB4C25CAB87C00B20A21 /* DevCell.swift in Sources */,
@@ -493,6 +534,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDDBD7A125C7A25500111DFB /* accessDeniedUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,7 +703,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = lkc.accessDenied;
+				PRODUCT_BUNDLE_IDENTIFIER = lkc.accessDenied.t;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -682,7 +724,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = lkc.accessDenied;
+				PRODUCT_BUNDLE_IDENTIFIER = lkc.accessDenied.t;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
