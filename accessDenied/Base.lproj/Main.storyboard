@@ -1848,7 +1848,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6KO-q1-EJN">
-                                                        <rect key="frame" x="15" y="9" width="15.5" height="20"/>
+                                                        <rect key="frame" x="15" y="2" width="15.5" height="20"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <color key="textColor" red="0.83529411760000005" green="0.1124990557" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1866,7 +1866,7 @@
                                                     <constraint firstItem="T2t-p7-IMn" firstAttribute="top" secondItem="itr-r4-kBp" secondAttribute="bottom" constant="10" id="ohX-tv-5CV"/>
                                                     <constraint firstAttribute="trailing" secondItem="T2t-p7-IMn" secondAttribute="trailing" id="qEQ-cS-bKA"/>
                                                     <constraint firstItem="6KO-q1-EJN" firstAttribute="leading" secondItem="ElP-gj-Xeq" secondAttribute="leading" constant="15" id="s3m-Xg-agc"/>
-                                                    <constraint firstItem="6KO-q1-EJN" firstAttribute="top" secondItem="ElP-gj-Xeq" secondAttribute="top" constant="9" id="uV1-iE-Jxd"/>
+                                                    <constraint firstItem="6KO-q1-EJN" firstAttribute="top" secondItem="ElP-gj-Xeq" secondAttribute="top" constant="2" id="uV1-iE-Jxd"/>
                                                     <constraint firstItem="itr-r4-kBp" firstAttribute="leading" secondItem="ElP-gj-Xeq" secondAttribute="leading" id="w21-EV-sSD"/>
                                                 </constraints>
                                             </view>
