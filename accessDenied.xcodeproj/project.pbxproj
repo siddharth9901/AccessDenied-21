@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1713CF4625D5767C009A56C4 /* SponsorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1713CF4525D5767C009A56C4 /* SponsorsViewController.swift */; };
 		1741C1A225C9CAA000DFBDF9 /* FaqCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1741C1A025C9CAA000DFBDF9 /* FaqCell.swift */; };
+		175FD5F725D7A86B00A4DC93 /* PrizesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175FD5F625D7A86B00A4DC93 /* PrizesViewController.swift */; };
 		177DFB4625CAB6D600B20A21 /* DevInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177DFB4525CAB6D600B20A21 /* DevInfoViewController.swift */; };
 		177DFB4C25CAB87C00B20A21 /* DevCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177DFB4A25CAB87C00B20A21 /* DevCell.swift */; };
 		177DFB4D25CAB87C00B20A21 /* DevCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 177DFB4B25CAB87C00B20A21 /* DevCell.xib */; };
@@ -66,6 +67,7 @@
 		115E85E42D818171D598876B /* Pods_accessDenied_accessDeniedUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_accessDenied_accessDeniedUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1713CF4525D5767C009A56C4 /* SponsorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorsViewController.swift; sourceTree = "<group>"; };
 		1741C1A025C9CAA000DFBDF9 /* FaqCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqCell.swift; sourceTree = "<group>"; };
+		175FD5F625D7A86B00A4DC93 /* PrizesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PrizesViewController.swift; path = accessDenied/PrizesViewController.swift; sourceTree = SOURCE_ROOT; };
 		177DFB4525CAB6D600B20A21 /* DevInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevInfoViewController.swift; sourceTree = "<group>"; };
 		177DFB4A25CAB87C00B20A21 /* DevCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevCell.swift; sourceTree = "<group>"; };
 		177DFB4B25CAB87C00B20A21 /* DevCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DevCell.xib; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				177DFB4A25CAB87C00B20A21 /* DevCell.swift */,
 				1713CF4525D5767C009A56C4 /* SponsorsViewController.swift */,
 				177DFB4B25CAB87C00B20A21 /* DevCell.xib */,
+				175FD5F625D7A86B00A4DC93 /* PrizesViewController.swift */,
 				1C434ADC25D70E2900663123 /* FAQ */,
 				FDDBD78025C7A25000111DFB /* SceneDelegate.swift */,
 				177DFB4525CAB6D600B20A21 /* DevInfoViewController.swift */,
@@ -497,6 +500,7 @@
 				1713CF4625D5767C009A56C4 /* SponsorsViewController.swift in Sources */,
 				AF21BCE025D32B83009CF417 /* infoOptionsTableViewCell.swift in Sources */,
 				BABEDC5F25D4FE9700892F60 /* checkInternet.swift in Sources */,
+				175FD5F725D7A86B00A4DC93 /* PrizesViewController.swift in Sources */,
 				177DFB4625CAB6D600B20A21 /* DevInfoViewController.swift in Sources */,
 				FD596E5925D4775000595B0A /* ContactUsViewController.swift in Sources */,
 				AF21BCFE25D342C6009CF417 /* speakerInfoTableViewCell.swift in Sources */,
