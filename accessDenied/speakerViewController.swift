@@ -129,6 +129,10 @@ extension speakerViewController: UITableViewDelegate, UITableViewDataSource{
             cell.nameLabel.text = speakers[indexPath.section].name
             cell.designationLabel.text = speakers[indexPath.section].designation
             cell.speakerImage?.sd_setImage(with: URL(string: speakers[indexPath.section].image))
+            cell.sectionIsExpanded = speakers[indexPath.section].isOpen
+            cell.tapCallback = {
+                self.rowAnimate(indexPath: indexPath)
+            }
             
             return cell
         }
@@ -145,7 +149,6 @@ extension speakerViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
         rowAnimate(indexPath: indexPath)
     }
     func rowAnimate( indexPath: IndexPath) {
@@ -155,7 +158,6 @@ extension speakerViewController: UITableViewDelegate, UITableViewDataSource{
             speakerTV.reloadSections(section, with: .none)
         }
         else{
-            print(indexPath.row)
             speakers[indexPath.section].isOpen = "True"
             let section = IndexSet.init(integer: indexPath.section)
             speakerTV.reloadSections(section, with: .none)

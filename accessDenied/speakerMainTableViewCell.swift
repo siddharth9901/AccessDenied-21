@@ -40,7 +40,6 @@ class speakerMainTableViewCell: UITableViewCell {
 
 
     @IBAction func buttonTapped(_ sender: Any) {
-        print("triggered")
         tapCallback?()
     }
     
