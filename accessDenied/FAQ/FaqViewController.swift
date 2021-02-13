@@ -38,6 +38,7 @@ class FaqViewController: UIViewController {
         self.view.sendSubviewToBack(imageView)
         faqTV.delegate = self
         faqTV.dataSource = self
+        
       
         self.faqTV.reloadData()
         

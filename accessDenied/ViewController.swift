@@ -109,10 +109,10 @@ class ViewController: UIViewController {
     var futureDate: Date = {
             var future = DateComponents(
                 year: 2021,
-                month: 2,
-                day: 13,
+                month: 3,
+                day: 19,
                 hour: 0,
-                minute: 20,
+                minute: 0,
                 second: 0
             )
             return Calendar.current.date(from: future)!
@@ -120,10 +120,10 @@ class ViewController: UIViewController {
     let endDate: Date = {
             var future = DateComponents(
                 year: 2021,
-                month: 2,
-                day: 13,
+                month: 3,
+                day: 23,
                 hour: 0,
-                minute: 21,
+                minute: 0,
                 second: 0
             )
             return Calendar.current.date(from: future)!
@@ -146,7 +146,7 @@ class ViewController: UIViewController {
             
             var didEnd = second == 0 && minute == 0 && day == 0 && hour == 0
             
-            if (status.text == "Hack starts in") {
+            if (status.text == "Hack Starts IN") {
                 if didEnd {
                     status.text = "HACK ENDS IN"
                     futureDate = endDate
@@ -154,24 +154,38 @@ class ViewController: UIViewController {
                     
                 }
             }
-            else if status.text == "HACK ENDS IN" {
-                if didEnd {
-                    status.text = " See you next time"
+            
+            else if (status.text == "HACK ENDS IN") {
+                if didEnd{
+                 
+                   // stopTimer()
+                    status.text = "Hack Concluded.See you next time"
                     days.text = "00"
                     hours.text = "00"
                     minutes.text = "00"
                     seconds.text = "00"
-                    fireTimer?.invalidate()
-                    fireTimer = nil
-                    
-                    
                 }
+            }
+            else if status.text == "Hack Concluded.See you next time"{
+                
+              stopTimer()
+                days.text = "00"
+                hours.text = "00"
+                minutes.text = "00"
+                seconds.text = "00"
+                
             }
             
         }
+    func stopTimer() {
+        fireTimer?.invalidate()
+        fireTimer = nil
+        
+    }
     var fireTimer: Timer? = nil
         func runCountdown() {
             fireTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+            
  
         }
     
