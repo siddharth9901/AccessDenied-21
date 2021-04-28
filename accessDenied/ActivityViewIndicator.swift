@@ -27,7 +27,7 @@ init(title: String, center: CGPoint, width: CGFloat = 200.0, height: CGFloat = 5
     let y = center.y - height/2.0
 
     self.view = UIView(frame: CGRect(x: x, y: y, width: width, height: height))
-    self.view.backgroundColor = Colors.faqCellBackground
+    self.view.backgroundColor = UIColor.gray
     self.view.layer.cornerRadius = 10
 
     self.activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))

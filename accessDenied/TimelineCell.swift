@@ -15,6 +15,10 @@ protocol CellDelegateT2: class {
     func copyBtnTapped(tag: Int)
 }
 
+protocol CellDelegateSocial: class {
+    func socialBtnTapped(tag: Int)
+}
+
 
 
 
@@ -36,6 +40,10 @@ class TimelineCell: UITableViewCell {
         delegateT2?.copyBtnTapped(tag: sender.tag)
     }
     
+    weak var socialDelegate: CellDelegateSocial?
+    @IBAction func socialBtnTapped(_ sender: Any) {
+        socialDelegate?.socialBtnTapped(tag: (sender as! UIButton).tag)
+    }
     
     @IBOutlet weak var time: UILabel!
     
@@ -43,6 +51,8 @@ class TimelineCell: UITableViewCell {
     @IBOutlet weak var descripLabel: UILabel!
     
     @IBOutlet weak var dpImageView: UIImageView!
+
+    @IBOutlet weak var dpSocial: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

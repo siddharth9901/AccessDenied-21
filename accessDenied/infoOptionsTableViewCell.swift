@@ -10,6 +10,7 @@ import UIKit
 class infoOptionsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleImage: UIImageView!
     
     
     override func awakeFromNib() {

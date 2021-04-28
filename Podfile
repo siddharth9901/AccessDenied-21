@@ -7,10 +7,10 @@ target 'accessDenied' do
 
   # Pods for accessDenied
     pod 'Firebase/Database'
+    pod 'Firebase/Messaging'
     pod 'SDWebImage'
     pod 'Toaster'
     pod 'IQKeyboardManagerSwift'
-
 
   target 'accessDeniedTests' do
     inherit! :search_paths

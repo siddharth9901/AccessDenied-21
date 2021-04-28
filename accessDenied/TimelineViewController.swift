@@ -26,7 +26,8 @@ class TimelineViewController: UIViewController {
     //var postData = [[String]]()
     
    
-  
+    @IBOutlet weak var errorLabel: UILabel!
+    
 
     var events: [event] = []
     //_______>
@@ -41,7 +42,8 @@ class TimelineViewController: UIViewController {
         let description: String // About the event
         let meetLink: String // Link of meeting
         let dp: String // Profile picture
-        let status: Int//Ongoing or not
+        let status: Int
+        let social: String
     }
     
     //var events: [event] = [event(time: "10:30 PM", description: "Hack Begins - 36 hours to go.",  meetLink: "", dp: UIImage(named: "sidDP")!)]
@@ -49,10 +51,14 @@ class TimelineViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let imageName = "65-1.png"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        imageView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        imageView.contentMode = .scaleAspectFill
+        view.addSubview(imageView)
+        self.view.sendSubviewToBack(imageView)
         
-        self.activityIndicatorView = ActivityIndicatorView(title: "Loading...", center: self.view.center)
-            self.view.addSubview(self.activityIndicatorView.getViewActivityIndicator())
-
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -61,10 +67,50 @@ class TimelineViewController: UIViewController {
         sc.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
         
         sc.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.gray], for: .normal)
-        activityIndicatorView.startAnimating()
-       loadData(EventDate: "17")
+        
+     
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if(self.checkForInternetConnection() == true){
+            errorLabel.isHidden = true
+            startLoadData()
+            if(sc.selectedSegmentIndex == 0){
+                loadData(EventDate: "17")
+            }else if(sc.selectedSegmentIndex == 1){
+                loadData(EventDate: "18")
+            }else if(sc.selectedSegmentIndex == 2){
+                loadData(EventDate: "19")
+            }else if(sc.selectedSegmentIndex == 2){
+                loadData(EventDate: "20")
+            }else if(sc.selectedSegmentIndex == 2){
+                loadData(EventDate: "21")
+            }
+        }else{
+            if(events.count == 0){
+                events = []
+                errorLabel.isHidden = false
+            }
+        }
+        resetBadgeCount()
+    }
+    
+    func resetBadgeCount() {
+
+        // A. reset userDefaults badge counter to 0
+        UserDefaults.standard.setValue(0, forKey: "accessDeniedBadgeCount")
+        // B. reset this back to 0 too
+        UIApplication.shared.applicationIconBadgeNumber = 0
+    }
+    
+    func startLoadData(){
+        self.activityIndicatorView = ActivityIndicatorView(title: "Loading...", center: self.view.center)
+            self.view.addSubview(self.activityIndicatorView.getViewActivityIndicator())
+
+        activityIndicatorView.startAnimating()
+    }
+    
     
     func loadData(EventDate: String) {
         
@@ -74,7 +120,6 @@ class TimelineViewController: UIViewController {
                     self.events = [ ]
                     self.activityIndicatorView.stopAnimating()
                     if(snapshot.childrenCount>0){
-                        print("\n",EventDate,"\n",snapshot);
 //                        self.timelineList.removeAll()
 //
 //
@@ -86,10 +131,9 @@ class TimelineViewController: UIViewController {
 //                            let cellTime = cellObject?["time"]
 //                            let cellImage = cellObject?["image"]
 //
-                            let item = event(StartTime: cellObject?["StartTime"] as! String? ?? "Failed to load StartTime", EndTime: cellObject?["EndTime"] as! String? ?? "Failed to load EndTime",description: cellObject?["EventName"] as! String? ?? "Failed to load EventDescription", meetLink: cellObject?["Link"] as! String? ?? "", dp: cellObject?["SpeakerPhoto"] as! String? ?? "", status: cellObject?["Status"] as! Int? ?? 0 )
+                            let item = event(StartTime: cellObject?["StartTime"] as! String? ?? "", EndTime: cellObject?["EndTime"] as! String? ?? "",description: cellObject?["EventName"] as! String? ?? "", meetLink: cellObject?["Link"] as! String? ?? "", dp: cellObject?["SpeakerPhoto"] as! String? ?? "", status: cellObject?["Status"] as! Int? ?? 0, social: cellObject?["social"] as! String? ?? "")
                             self.events.append(item)
                             self.tableView.reloadData()
-                            print("\n",self.events)
                         }
                       //  self.tableView.reloadData()
 //
@@ -111,22 +155,44 @@ class TimelineViewController: UIViewController {
         
         
         if sender.selectedSegmentIndex == 0{
-            activityIndicatorView.startAnimating()
-             loadData(EventDate: "19")
+            
+            if(self.checkForInternetConnection() == true){
+                startLoadData()
+                loadData(EventDate: "17")
+            }
            
             
         }
          
         else if sender.selectedSegmentIndex == 1{
-            activityIndicatorView.startAnimating()
-            loadData(EventDate: "20")
            
+            if(self.checkForInternetConnection() == true){
+                startLoadData()
+                loadData(EventDate: "18")
+            }
+        }
+        else if sender.selectedSegmentIndex == 2{
+           
+            if(self.checkForInternetConnection() == true){
+                startLoadData()
+                loadData(EventDate: "19")
+            }
+        }
+        else if sender.selectedSegmentIndex == 3{
+           
+            if(self.checkForInternetConnection() == true){
+                startLoadData()
+                loadData(EventDate: "20")
+            }
+        }
+        else{
+           
+            if(self.checkForInternetConnection() == true){
+                startLoadData()
+                loadData(EventDate: "21")
+            }
         }
         
-        else{
-            activityIndicatorView.startAnimating()
-            loadData(EventDate: "21")
-        }
         
     }
     
@@ -155,11 +221,13 @@ extension TimelineViewController: UITableViewDataSource,UITableViewDelegate{
         }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //print(events)
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath) as! TimelineCell
-        cell.time?.text = "\(events[indexPath.section].StartTime) - \(events[indexPath.section].EndTime)"
+        
+        cell.time?.text = "\(events[indexPath.section].StartTime)"
+        if(events[indexPath.section].EndTime.count > 0){
+            cell.time?.text = (cell.time?.text)! + " - \(events[indexPath.section].EndTime)"
+        }
         cell.descripLabel?.text = events[indexPath.section].description
-       
         //cell.skillImage? =    events[indexPath.section].eventType
        // cell.dpImage?.image = events[indexPath.section].dp
         cell.layer.cornerRadius = 20
@@ -173,6 +241,9 @@ extension TimelineViewController: UITableViewDataSource,UITableViewDelegate{
         cell.copyBtnOutlet.tag = indexPath.section
         cell.copyBtnOutlet.setTitle("\(indexPath.section)", for: .normal)
         
+        cell.socialDelegate = self
+        cell.dpSocial.tag = indexPath.section
+        cell.dpSocial.setTitle("\(indexPath.section)", for: .normal)
         //Code for dev button
 //        cell.delegate = self
 //        cell.linkedInBtn.tag = indexPath.section
@@ -194,10 +265,17 @@ extension TimelineViewController: UITableViewDataSource,UITableViewDelegate{
             cell.dpImageView?.sd_setImage(with: URL(string: events[indexPath.section].dp))
         }
         
+        if events[indexPath.section].status == 1{
+                cell.layer.borderWidth = 3
+                cell.layer.borderColor = Colors.faqText.cgColor
+            } else {
+                cell.layer.borderWidth = 0
+                cell.layer.borderColor = UIColor.clear.cgColor
+            }
+        
         //Hiding the buttons
         let meet = events[indexPath.section].meetLink.count
         if meet == 0{
-            //print(events[indexPath.section].description)
             cell.copyBtnOutlet.setImage(nil, for: .normal)
             cell.copyBtnOutlet.isHidden = true
             
@@ -210,15 +288,6 @@ extension TimelineViewController: UITableViewDataSource,UITableViewDelegate{
             cell.copyBtnOutlet.isHidden = false
             cell.copyBtnOutlet.setImage(UIImage(systemName:  "doc.on.clipboard.fill"), for: .normal)
         }
-        if events[indexPath.section].status == 1{//if event is Ongoing
-            cell.layer.borderWidth = 2
-            cell.layer.borderColor = Colors.faqText.cgColor
-            print("yo")
-        } else {
-            cell.layer.borderWidth = 0
-        }
-        print("????//////////////////////")
-        print("",cell.playButtonOutlet.isHidden)
         return cell
     }
 }
@@ -236,12 +305,21 @@ extension TimelineViewController: CellDelegateT2{
     func copyBtnTapped(tag: Int) {
         let MeetLink = events[tag].meetLink
         UIPasteboard.general.string = MeetLink
-        print("pressed")
-        let toast = Toast(text: "Meeting Link coppied")
+        let toast = Toast(text: "Meeting Link copied")
         toast.show()
-        ToastView.appearance().backgroundColor = Colors.faqCellBackground
+        ToastView.appearance().backgroundColor = UIColor.gray
         ToastView.appearance().textColor = Colors.faqText
+        ToastView.appearance().bottomOffsetPortrait = self.view.frame.height/2
+        ToastView.appearance().font = UIFont(name: "System Medium", size: 20)
     }
 }
 
+extension TimelineViewController: CellDelegateSocial{
+    func socialBtnTapped(tag: Int) {
+        if(events[tag].social != nil && events[tag].social.count > 0){
+            let vc = SFSafariViewController(url: URL(string: events[tag].social)!)
+            present(vc, animated: true)
+        }
+    }
+}
 
